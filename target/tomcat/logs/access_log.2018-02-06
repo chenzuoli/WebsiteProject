@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [06/Feb/2018:22:39:23 +0800] "GET /dataQuery/register/index?name=chenzuoli&password=wy709918 HTTP/1.1" 200 140 http-bio-7099-exec-1 3108
+0:0:0:0:0:0:0:1 - - [06/Feb/2018:22:39:23 +0800] "GET /favicon.ico HTTP/1.1" 404 - http-bio-7099-exec-3 0
+0:0:0:0:0:0:0:1 - - [06/Feb/2018:22:40:20 +0800] "GET /dataQuery/login/index?name=chenzuoli&password=wy709918 HTTP/1.1" 200 138 http-bio-7099-exec-4 760
+0:0:0:0:0:0:0:1 - - [06/Feb/2018:22:41:04 +0800] "GET /dataQuery/system/index?name=chenzuoli&password=wy709918 HTTP/1.1" 200 136 http-bio-7099-exec-8 165

@@ -1,0 +1,364 @@
+2018-02-0723:31:43[http-bio-7099-exec-1:8864]-[ERROR]/index
+com.jfinal.render.RenderException: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 14 in the jsp file: /login.jsp
+The method getSessionId() is undefined for the type HttpSession
+11:     out.println("------------------------------");
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId())
+15:     out.println("sessionId", session.getSessionId())
+16: %>
+17: <html>
+
+
+An error occurred at line: 14 in the jsp file: /login.jsp
+Syntax error, insert ";" to complete Statement
+11:     out.println("------------------------------");
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId())
+15:     out.println("sessionId", session.getSessionId())
+16: %>
+17: <html>
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+The method getSessionId() is undefined for the type HttpSession
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId())
+15:     out.println("sessionId", session.getSessionId())
+16: %>
+17: <html>
+18:     <head>
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error, insert ";" to complete Statement
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId())
+15:     out.println("sessionId", session.getSessionId())
+16: %>
+17: <html>
+18:     <head>
+
+
+Stacktrace:
+	at com.jfinal.render.JspRender.render(JspRender.java:69)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:93)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:72)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 14 in the jsp file: /login.jsp
+The method getSessionId() is undefined for the type HttpSession
+11:     out.println("------------------------------");
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId())
+15:     out.println("sessionId", session.getSessionId())
+16: %>
+17: <html>
+
+
+An error occurred at line: 14 in the jsp file: /login.jsp
+Syntax error, insert ";" to complete Statement
+11:     out.println("------------------------------");
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId())
+15:     out.println("sessionId", session.getSessionId())
+16: %>
+17: <html>
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+The method getSessionId() is undefined for the type HttpSession
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId())
+15:     out.println("sessionId", session.getSessionId())
+16: %>
+17: <html>
+18:     <head>
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error, insert ";" to complete Statement
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId())
+15:     out.println("sessionId", session.getSessionId())
+16: %>
+17: <html>
+18:     <head>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:103)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:366)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:468)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:378)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:353)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:646)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:357)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:390)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:749)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:487)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:412)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:339)
+	at com.jfinal.render.JspRender.render(JspRender.java:67)
+	... 18 more
+2018-02-0723:32:28[http-bio-7099-exec-1:2423]-[ERROR]/index
+com.jfinal.render.RenderException: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 14 in the jsp file: /login.jsp
+The method getSessionId() is undefined for the type HttpSession
+11:     out.println("------------------------------");
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId())
+15:     out.println("sessionId: " + session.getSessionId())
+16: %>
+17: <html>
+
+
+An error occurred at line: 14 in the jsp file: /login.jsp
+Syntax error, insert ";" to complete Statement
+11:     out.println("------------------------------");
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId())
+15:     out.println("sessionId: " + session.getSessionId())
+16: %>
+17: <html>
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+The method getSessionId() is undefined for the type HttpSession
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId())
+15:     out.println("sessionId: " + session.getSessionId())
+16: %>
+17: <html>
+18:     <head>
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error, insert ";" to complete Statement
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId())
+15:     out.println("sessionId: " + session.getSessionId())
+16: %>
+17: <html>
+18:     <head>
+
+
+Stacktrace:
+	at com.jfinal.render.JspRender.render(JspRender.java:69)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:93)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:72)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 14 in the jsp file: /login.jsp
+The method getSessionId() is undefined for the type HttpSession
+11:     out.println("------------------------------");
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId())
+15:     out.println("sessionId: " + session.getSessionId())
+16: %>
+17: <html>
+
+
+An error occurred at line: 14 in the jsp file: /login.jsp
+Syntax error, insert ";" to complete Statement
+11:     out.println("------------------------------");
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId())
+15:     out.println("sessionId: " + session.getSessionId())
+16: %>
+17: <html>
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+The method getSessionId() is undefined for the type HttpSession
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId())
+15:     out.println("sessionId: " + session.getSessionId())
+16: %>
+17: <html>
+18:     <head>
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error, insert ";" to complete Statement
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId())
+15:     out.println("sessionId: " + session.getSessionId())
+16: %>
+17: <html>
+18:     <head>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:103)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:366)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:468)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:378)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:353)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:646)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:357)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:390)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:749)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:487)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:412)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:339)
+	at com.jfinal.render.JspRender.render(JspRender.java:67)
+	... 18 more
+2018-02-0723:33:05[http-bio-7099-exec-1:2354]-[ERROR]/index
+com.jfinal.render.RenderException: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 14 in the jsp file: /login.jsp
+The method getSessionId() is undefined for the type HttpSession
+11:     out.println("------------------------------");
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId());
+15:     out.println("sessionId: " + session.getSessionId());
+16: %>
+17: <html>
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+The method getSessionId() is undefined for the type HttpSession
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId());
+15:     out.println("sessionId: " + session.getSessionId());
+16: %>
+17: <html>
+18:     <head>
+
+
+Stacktrace:
+	at com.jfinal.render.JspRender.render(JspRender.java:69)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:93)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:72)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 14 in the jsp file: /login.jsp
+The method getSessionId() is undefined for the type HttpSession
+11:     out.println("------------------------------");
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId());
+15:     out.println("sessionId: " + session.getSessionId());
+16: %>
+17: <html>
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+The method getSessionId() is undefined for the type HttpSession
+12:     out.println("------------------------------");
+13:     out.println("------------------------------");
+14:     session.setAttribute("sessionId", session.getSessionId());
+15:     out.println("sessionId: " + session.getSessionId());
+16: %>
+17: <html>
+18:     <head>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:103)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:366)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:468)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:378)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:353)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:646)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:357)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:390)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:749)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:487)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:412)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:339)
+	at com.jfinal.render.JspRender.render(JspRender.java:67)
+	... 18 more
