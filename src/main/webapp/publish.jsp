@@ -12,19 +12,50 @@
         <title>发表文章</title>
         <link rel="icon" href="images/favicon-16x16.png" type="image/x-icon" />
     </head>
+    <style>
+        .divbody {
+            width: 800px;
+            height: 300px;
+            border: 10px;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .input1 {
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .input2 {
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .textarea {
+            width:100%;
+            height:200px;
+            display:none;
+        }
+    </style>
     <body>
+        <div class="divbody">
         <h1>Welcome!<%=uid%></h1>
         <form action="personal/welcome.jsp" id="userform" method="post">
-            <div id="div1">
-                <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>
+            <div class="title">
+                标题:<input class="input1" name="title"></input>
             </div>
-            <textarea id="text1" style="width:100%; height:200px;display:none" name="content"></textarea>
+            <div class="title">
+                标签:<input class="input2" name="tag"></input>
+            </div>
+            <br>
+            <div id="div1"></div>
+            <textarea id="text" class="textarea" name="content"></textarea>
             <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
             <script type="text/javascript" src="/js/wangEditor.min.js"></script>
             <script type="text/javascript">
                 var E = window.wangEditor
                 var editor = new E('#div1')
-                var $text1 = $('#text1')
+                var $text1 = $('#text')
                 editor.customConfig.onchange = function(html) {
                     // 监控变化，同步更新到 textarea
                     $text1.val(html)
@@ -35,5 +66,6 @@
             </script>
             <input type="submit" value="发表"/>
         </form>
+        </div>
     </body>
 </html>
