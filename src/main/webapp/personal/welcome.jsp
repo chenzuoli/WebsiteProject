@@ -2,9 +2,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><%-- 這句很重要 不能漏--%>
 <%@ page import="java.util.*,java.io.*,top.wetech.czl.model.Article"%>
 <%
+    String title = request.getParameter("title");
+    String tag = request.getParameter("tag");
     String content = request.getParameter("content");
     String uid = session.getAttribute("uid").toString();
-    Article.dao.saveArticle(content, "大数据", uid, "spark");
+    Article.dao.saveArticle(title, tag, uid, content);
 %>
 <html>
     <head>
