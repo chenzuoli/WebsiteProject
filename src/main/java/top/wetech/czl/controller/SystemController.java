@@ -13,7 +13,7 @@ import com.jfinal.core.Controller;
 public class SystemController extends Controller{
 
     public void index(){
-        render("/login.jsp");
+        render("/login.html");
     }
 
 }

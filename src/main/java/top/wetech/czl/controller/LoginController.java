@@ -16,7 +16,7 @@ import java.util.List;
 public class LoginController extends Controller {
 
     public void index(){
-        render("/login.jsp");
+        render("/login.html");
 //        List<User> users = User.dao.findByNameAndPassword(getPara("name"), getPara("password"));
 //        if (users.size() > 0){
 //            // 找到用户

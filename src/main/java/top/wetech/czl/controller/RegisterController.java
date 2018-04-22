@@ -22,7 +22,7 @@ public class RegisterController extends Controller {
 //        }
 //        User.dao.saveUser(name, password);
 //        render("/theOK.jsp");
-        render("/register.jsp");
+        render("/signup.html");
     }
 
 }
