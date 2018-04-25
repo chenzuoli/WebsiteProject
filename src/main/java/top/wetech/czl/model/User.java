@@ -1,7 +1,9 @@
 package top.wetech.czl.model;
 
 import com.jfinal.plugin.activerecord.Model;
+import top.wetech.czl.util.StringUtil;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,6 +15,16 @@ import java.util.List;
  */
 
 public class User extends Model<User> {
+    private int id;
+    private String uid;
+    private String uname;
+    private String mobile;
+    private String email;
+    private long qq;
+    private String wechat;
+    private String password;
+    private Date createtime;
+    private Date updatetime;
 
     public static final User dao = new User();
 
@@ -38,4 +50,115 @@ public class User extends Model<User> {
         set("uid", uid).set("password", password).save();
     }
 
+    public User() {
+    }
+
+    public User(int id, String uid, String uname, String mobile, String email, long qq, String wechat, String password, Date createtime, Date updatetime) {
+        this.id = id;
+        this.uid = uid;
+        this.uname = uname;
+        this.mobile = mobile;
+        this.email = email;
+        this.qq = qq;
+        this.wechat = wechat;
+        this.password = password;
+        this.createtime = createtime;
+        this.updatetime = updatetime;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public String getUname() {
+        return uname;
+    }
+
+    public void setUname(String uname) {
+        this.uname = uname;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public long getQq() {
+        return qq;
+    }
+
+    public void setQq(long qq) {
+        this.qq = qq;
+    }
+
+    public String getWechat() {
+        return wechat;
+    }
+
+    public void setWechat(String wechat) {
+        this.wechat = wechat;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Date getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
+    }
+
+    public Date getUpdatetime() {
+        return updatetime;
+    }
+
+    public void setUpdatetime(Date updatetime) {
+        this.updatetime = updatetime;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "\"id\":" + id +
+                ", \"uid\":\"" + uid + "\"" +
+                ", \"uname\":\"" + uname + "\"" +
+                ", \"mobile\":\"" + mobile + "\"" +
+                ", \"email\":\"" + email + "\"" +
+                ", \"qq\":" + qq +
+                ", \"wechat\":\"" + wechat + "\"" +
+                ", \"password\":\"" + password + "\"" +
+                ", \"createtime\":\"" + StringUtil.formatY_M_D_HMS.format(createtime) +
+                ", \"updatetime\":\"" + StringUtil.formatY_M_D_HMS.format(updatetime) +
+                "}";
+    }
 }

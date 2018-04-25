@@ -25,4 +25,10 @@ public class RegisterController extends Controller {
         render("/signup.html");
     }
 
+    public void saveUser(){
+        String userid = getPara("userid");
+        String password = getPara("password");
+
+    }
+
 }
