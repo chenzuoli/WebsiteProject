@@ -37,8 +37,9 @@ public class Article extends Model<Article> {
      * @param uid     文章作者id
      * @param content 文章内容
      */
-    public void saveArticle(String title, String tag, String uid, String content) {
-        set("content", content).set("title", title).set("uid", uid).set("tags", tag).set("articleid", UUID.randomUUID().toString()).save();
+    public boolean saveArticle(String title, String tag, String uid, String content) {
+        boolean isSave = set("content", content).set("title", title).set("uid", uid).set("tags", tag).set("articleid", UUID.randomUUID().toString()).save();
+        return isSave;
     }
 
     /**
@@ -48,9 +49,13 @@ public class Article extends Model<Article> {
      * @return 文章类
      */
     public Article queryArticle(String articleId) {
+        Article article = null;
         String queryArticleSql = "select mid, uid, title, articleid, content, tags, clicks, fans, createtime, updatetime from articles where articleid = ?";
         List<Article> articles = find(queryArticleSql, articleId);
-        return articles.get(0);
+        if (articles.size() > 0){
+            article = articles.get(0);
+        }
+        return article;
     }
 
     public int getId() {

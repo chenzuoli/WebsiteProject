@@ -12,6 +12,7 @@ import top.wetech.czl.model.User;
  */
 
 public class RegisterController extends Controller {
+    private User user = new User();
 
     public void index(){
 //        String name = getPara("name");
@@ -28,7 +29,8 @@ public class RegisterController extends Controller {
     public void saveUser(){
         String userid = getPara("userid");
         String password = getPara("password");
-
+        boolean isSaved = user.saveUser(userid, password);
+        render(String.valueOf(isSaved));
     }
 
 }

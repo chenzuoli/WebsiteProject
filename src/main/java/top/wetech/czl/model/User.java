@@ -46,8 +46,9 @@ public class User extends Model<User> {
      * @param uid      用户id
      * @param password 密码
      */
-    public void saveUser(String uid, String password) {
-        set("uid", uid).set("password", password).save();
+    public boolean saveUser(String uid, String password) {
+        boolean isSaved = set("uid", uid).set("password", password).save();
+        return isSaved;
     }
 
     public User() {
