@@ -14,7 +14,6 @@ import java.util.List;
  */
 
 public class SystemController extends Controller{
-    private Article article = new Article();
 
     public void index(){
         render("/login.html");
@@ -25,7 +24,7 @@ public class SystemController extends Controller{
      */
     public void article(){
         String articleId = getPara("articleId");
-        Article article = this.article.queryArticle(articleId);
+        Article article = Article.dao.queryArticle(articleId);
         renderJson(article);
     }
 
@@ -34,7 +33,7 @@ public class SystemController extends Controller{
      */
     public void hotArticle(){
         String sql = "select mid, uid, title, articleid, content, tags, clicks, fans, createtime, updatetime from articles order by clicks desc limit 1000";
-        List<Article> articles = article.find(sql);
+        List<Article> articles = Article.dao.find(sql);
         renderJson(articles);
     }
 

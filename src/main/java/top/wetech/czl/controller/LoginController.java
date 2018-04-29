@@ -14,7 +14,6 @@ import java.util.List;
  */
 
 public class LoginController extends Controller {
-    private User user = new User();
 
     public void index(){
         render("/login.html");
@@ -31,7 +30,7 @@ public class LoginController extends Controller {
     public void login(){
         String userid = getPara("userid");
         String password = getPara("password");
-        List<User> users = user.findByNameAndPassword(userid, password);
+        List<User> users = User.dao.findByNameAndPassword(userid, password);
         User user = null;
         if (users.size() > 0){
             user = users.get(0);

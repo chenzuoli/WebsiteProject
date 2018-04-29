@@ -9,8 +9,7 @@ import top.wetech.czl.controller.IndexController;
 import top.wetech.czl.controller.LoginController;
 import top.wetech.czl.controller.RegisterController;
 import top.wetech.czl.controller.SystemController;
-import top.wetech.czl.model.Article;
-import top.wetech.czl.model.User;
+import top.wetech.czl.model.*;
 
 /**
  * Company: 北京通付盾数据科技有限公司
@@ -28,9 +27,9 @@ public class JFinalCfg extends JFinalConfig {
     }
 
     public void configRoute(Routes routes) {
-        routes.add("/system", SystemController.class);
         routes.add("/", IndexController.class);
         routes.add("/login", LoginController.class);
+        routes.add("/system", SystemController.class);
         routes.add("/register", RegisterController.class);
     }
 
@@ -41,6 +40,10 @@ public class JFinalCfg extends JFinalConfig {
         plugins.add(arp);
         arp.addMapping("users", User.class); //该方法建立了数据库表名到 Model 的映射关系,下面的示例为默认主键是id
         arp.addMapping("articles", Article.class);
+        arp.addMapping("records", Records.class);
+        arp.addMapping("comments", Comments.class);
+        arp.addMapping("replies", Replies.class);
+        arp.addMapping("fans", Fans.class);
     }
 
     public static C3p0Plugin createC3P0Plugin() {

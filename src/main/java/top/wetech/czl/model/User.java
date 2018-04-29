@@ -51,7 +51,7 @@ public class User extends Model<User> {
         return isSaved;
     }
 
-    public User() {
+    private User() {
     }
 
     public User(int id, String uid, String uname, String mobile, String email, long qq, String wechat, String password, Date createtime, Date updatetime) {
@@ -158,8 +158,8 @@ public class User extends Model<User> {
                 ", \"qq\":" + qq +
                 ", \"wechat\":\"" + wechat + "\"" +
                 ", \"password\":\"" + password + "\"" +
-                ", \"createtime\":\"" + StringUtil.formatY_M_D_HMS.format(createtime) +
-                ", \"updatetime\":\"" + StringUtil.formatY_M_D_HMS.format(updatetime) +
+                ", \"createtime\":\"" + StringUtil.formatY_M_D_HMS.format(createtime) + "\"" +
+                ", \"updatetime\":\"" + StringUtil.formatY_M_D_HMS.format(updatetime) + "\"" +
                 "}";
     }
 }

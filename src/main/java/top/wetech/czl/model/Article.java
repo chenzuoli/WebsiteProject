@@ -8,11 +8,10 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * @Discription: 文章model，提供查询、存储文章功能
  * @User: 陈作立
  * @Date: 2018/3/8 0008
  * @Time: 0:10
- * @Ps: jfinal
+ * @Discription: 文章model，提供查询、存储文章功能
  */
 public class Article extends Model<Article> {
     private int id;
@@ -160,7 +159,7 @@ public class Article extends Model<Article> {
         this.updatetime = updatetime;
     }
 
-    public Article() {
+    private Article() {
     }
 
     @Override
@@ -175,8 +174,8 @@ public class Article extends Model<Article> {
                 ", \"tags\":\"" + tags + "\"" +
                 ", \"clicks\":" + clicks +
                 ", \"fans\":" + fans +
-                ", \"createtime\":" + StringUtil.formatY_M_D_HMS.format(createtime) +
-                ", \"updatetime\":" + StringUtil.formatY_M_D_HMS.format(updatetime) +
+                ", \"createtime\":\"" + StringUtil.formatY_M_D_HMS.format(createtime) + "\"" +
+                ", \"updatetime\":\"" + StringUtil.formatY_M_D_HMS.format(updatetime) + "\"" +
                 "}";
     }
 }
