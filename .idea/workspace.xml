@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca1de463-6344-4765-a183-e89b82de324e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/WebsiteProject_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/WebsiteProject_war_exploded.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/WebsiteProject.iml" afterPath="$PROJECT_DIR$/WebsiteProject.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/LoginController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/User.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/util/JFinalCfg.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/util/JFinalCfg.java" />
       <change beforePath="$PROJECT_DIR$/target/classes/top/wetech/czl/controller/LoginController.class" afterPath="$PROJECT_DIR$/target/classes/top/wetech/czl/controller/LoginController.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/top/wetech/czl/model/User.class" afterPath="$PROJECT_DIR$/target/classes/top/wetech/czl/model/User.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/wetech/czl/util/JFinalCfg.class" afterPath="$PROJECT_DIR$/target/classes/top/wetech/czl/util/JFinalCfg.class" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,8 +30,8 @@
       <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+            <state relative-caret-position="107">
+              <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -550,7 +542,7 @@
       <workItem from="1524757481043" duration="1609000" />
       <workItem from="1524841622130" duration="1115000" />
       <workItem from="1524979431765" duration="4033000" />
-      <workItem from="1525433013525" duration="4351000" />
+      <workItem from="1525433013525" duration="4380000" />
     </task>
     <task id="LOCAL-00001" summary="添加连接阿里云mysql配置">
       <created>1517758328015</created>
@@ -699,11 +691,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524759631416</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="添加接口：&#10;1.登录验证；&#10;2.注册保存用户信息；">
+      <created>1525437388785</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1525437388786</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34547000" />
+    <option name="totallyTimeSpent" value="34576000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1388,8 +1387,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        <state relative-caret-position="107">
+          <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
           <folding />
         </state>
       </provider>
