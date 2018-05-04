@@ -36,7 +36,7 @@ public class User extends Model<User> {
      * @return
      */
     public List<User> findByNameAndPassword(String uid, String password) {
-        List<User> users = find("select * from users where uid = '" + uid + "' and password = '" + password + "'");
+        List<User> users = find("select id, uid, uname, mobile, email, qq, wechat, password, createtime, updatetime from users where uid = '" + uid + "' and password = '" + password + "'");
         return users;
     }
 
@@ -51,7 +51,7 @@ public class User extends Model<User> {
         return isSaved;
     }
 
-    private User() {
+    public User() {
     }
 
     public User(int id, String uid, String uname, String mobile, String email, long qq, String wechat, String password, Date createtime, Date updatetime) {
@@ -158,8 +158,8 @@ public class User extends Model<User> {
                 ", \"qq\":" + qq +
                 ", \"wechat\":\"" + wechat + "\"" +
                 ", \"password\":\"" + password + "\"" +
-                ", \"createtime\":\"" + StringUtil.formatY_M_D_HMS.format(createtime) + "\"" +
-                ", \"updatetime\":\"" + StringUtil.formatY_M_D_HMS.format(updatetime) + "\"" +
+                ", \"createtime\":\"" + createtime == null?"":StringUtil.formatY_M_D_HMS.format(createtime) + "\"" +
+                ", \"updatetime\":\"" + updatetime == null?"":StringUtil.formatY_M_D_HMS.format(updatetime) + "\"" +
                 "}";
     }
 }

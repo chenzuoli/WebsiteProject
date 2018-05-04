@@ -38,7 +38,7 @@ public class JFinalCfg extends JFinalConfig {
         plugins.add(C3p0Plugin);
         ActiveRecordPlugin arp = new ActiveRecordPlugin(C3p0Plugin); //数据库操作插件
         plugins.add(arp);
-        arp.addMapping("users", User.class); //该方法建立了数据库表名到 Model 的映射关系,下面的示例为默认主键是id
+        arp.addMapping("users", "id", User.class); //该方法建立了数据库表名到 Model 的映射关系,下面的示例为默认主键是id
         arp.addMapping("articles", Article.class);
         arp.addMapping("records", Records.class);
         arp.addMapping("comments", Comments.class);
