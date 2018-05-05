@@ -74,12 +74,20 @@ public class Fans extends Model<Fans> {
 
     @Override
     public String toString() {
+        String loveTimeStr = "";
+        String leaveTimeStr = "";
+        if (loveTimeStr != null){
+            loveTimeStr = StringUtil.formatY_M_D_HMS.format(lovetime);
+        }
+        if (leaveTimeStr != null){
+            leaveTimeStr = StringUtil.formatY_M_D_HMS.format(leavetime);
+        }
         return "{" +
                 "\"id\":" + id +
                 ", \"fid\":\"" + fid + "\"" +
                 ", \"aid\":\"" + aid + "\"" +
-                ", \"lovetime\":\"" + StringUtil.formatY_M_D_HMS.format(lovetime) + "\"" +
-                ", \"leavetime\":\"" + StringUtil.formatY_M_D_HMS.format(leavetime) + "\"" +
+                ", \"lovetime\":\"" + loveTimeStr + "\"" +
+                ", \"leavetime\":\"" + leaveTimeStr + "\"" +
                 "}";
     }
 }

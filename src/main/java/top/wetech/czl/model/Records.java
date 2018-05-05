@@ -64,11 +64,15 @@ public class Records extends Model<Records>{
 
     @Override
     public String toString() {
+        String observeTimeStr = "";
+        if (observeTimeStr != null){
+            observeTimeStr = StringUtil.formatY_M_D_HMS.format(observetime);
+        }
         return "{" +
                 "\"id\":" + id +
                 ", \"uid\":\"" + uid + "\"" +
                 ", \"uip\":\"" + uip + "\"" +
-                ", \"observetime\":\"" + StringUtil.formatY_M_D_HMS.format(observetime) + "\"" +
+                ", \"observetime\":\"" + observeTimeStr + "\"" +
                 "}";
     }
 }

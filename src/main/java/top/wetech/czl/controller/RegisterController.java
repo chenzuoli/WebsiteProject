@@ -1,7 +1,10 @@
 package top.wetech.czl.controller;
 
 import com.jfinal.core.Controller;
+import net.sf.json.JSONObject;
 import top.wetech.czl.model.User;
+
+import java.util.List;
 
 /**
  * Company: 北京通付盾数据科技有限公司
@@ -14,22 +17,22 @@ import top.wetech.czl.model.User;
 public class RegisterController extends Controller {
 
     public void index(){
-//        String name = getPara("name");
-//        String password = getPara("password");
-//        if (name == null || password == null){
-//            renderText("用户名或密码不能为空。");
-//            return;
-//        }
-//        User.dao.saveUser(name, password);
-//        render("/theOK.jsp");
-        render("/signup.html");
-    }
-
-    public void saveUser(){
-        String userid = getPara("userid");
+        String uid = getPara("uid");
         String password = getPara("password");
-        boolean isSaved = User.dao.saveUser(userid, password);
-        render(String.valueOf(isSaved));
+        List<User> users = User.dao.findById(uid);
+        JSONObject returnJson = new JSONObject();
+        if (users.size()>0){
+            returnJson.put("statCode", "720");
+            renderJson(returnJson);
+            return;
+        }
+        boolean isSaved = User.dao.saveUser(uid, password);
+        if (isSaved) {
+            returnJson.put("statCode", "709");
+        } else {
+            returnJson.put("statCode", "730");
+        }
+        renderJson(returnJson);
     }
 
 }

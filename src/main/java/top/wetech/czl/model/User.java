@@ -35,8 +35,13 @@ public class User extends Model<User> {
      * @param password 密码
      * @return
      */
-    public List<User> findByNameAndPassword(String uid, String password) {
+    public List<User> findByIdAndPassword(String uid, String password) {
         List<User> users = find("select id, uid, uname, mobile, email, qq, wechat, password, createtime, updatetime from users where uid = '" + uid + "' and password = '" + password + "'");
+        return users;
+    }
+
+    public List<User> findById(String uid) {
+        List<User> users = find("select id, uid, uname, mobile, email, qq, wechat, password, createtime, updatetime from users where uid = '" + uid + "'");
         return users;
     }
 
@@ -149,6 +154,14 @@ public class User extends Model<User> {
 
     @Override
     public String toString() {
+        String createTimeStr = "";
+        String updateTimeStr = "";
+        if (createtime != null){
+            createTimeStr = StringUtil.formatY_M_D_HMS.format(createtime);
+        }
+        if (updatetime != null){
+            updateTimeStr = StringUtil.formatY_M_D_HMS.format(updatetime);
+        }
         return "{" +
                 "\"id\":" + id +
                 ", \"uid\":\"" + uid + "\"" +
@@ -158,8 +171,8 @@ public class User extends Model<User> {
                 ", \"qq\":" + qq +
                 ", \"wechat\":\"" + wechat + "\"" +
                 ", \"password\":\"" + password + "\"" +
-                ", \"createtime\":\"" + createtime == null?"":StringUtil.formatY_M_D_HMS.format(createtime) + "\"" +
-                ", \"updatetime\":\"" + updatetime == null?"":StringUtil.formatY_M_D_HMS.format(updatetime) + "\"" +
+                ", \"createtime\":\"" + createTimeStr + "\"" +
+                ", \"updatetime\":\"" + updateTimeStr + "\"" +
                 "}";
     }
 }

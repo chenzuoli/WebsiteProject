@@ -20,7 +20,7 @@ public class LoginController extends Controller {
     public void index() {
         String uid = getPara("uid");
         String password = getPara("password");
-        List<User> users = User.dao.findByNameAndPassword(uid, password);
+        List<User> users = User.dao.findByIdAndPassword(uid, password);
         JSONObject returnJson = new JSONObject();
         JSONObject userInfo = new JSONObject();
         if (users.size() > 0) {

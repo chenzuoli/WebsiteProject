@@ -94,6 +94,10 @@ public class Comments extends Model<Comments> {
 
     @Override
     public String toString() {
+        String createTimeStr = "";
+        if (createtime != null){
+            createTimeStr = StringUtil.formatY_M_D_HMS.format(createtime);
+        }
         return "{" +
                 "\"id\":" + id +
                 ", \"aid\":\"" + aid + "\"" +
@@ -101,7 +105,7 @@ public class Comments extends Model<Comments> {
                 ", \"comment\":\"" + comment + "\"" +
                 ", \"like\":" + like +
                 ", \"trample\":" + trample +
-                ", \"createtime\":\"" + StringUtil.formatY_M_D_HMS.format(createtime) + "\"" +
+                ", \"createtime\":\"" + createTimeStr + "\"" +
                 "}";
     }
 }

@@ -2,10 +2,74 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca1de463-6344-4765-a183-e89b82de324e" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/WebsiteProject_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/WebsiteProject_war_exploded.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/top/wetech/czl/controller/LoginController.class" afterPath="$PROJECT_DIR$/target/classes/top/wetech/czl/controller/LoginController.class" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject.iml" afterPath="$PROJECT_DIR$/WebsiteProject.iml" />
+      <change beforePath="$PROJECT_DIR$/log/log.debug.file" afterPath="$PROJECT_DIR$/log/log.debug.file" />
+      <change beforePath="$PROJECT_DIR$/log/log.info.file" afterPath="$PROJECT_DIR$/log/log.info.file" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/LoginController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/RegisterController.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/RegisterController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Article.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Article.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Comments.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Comments.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Fans.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Fans.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Records.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Records.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Replies.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Replies.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/User.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/util/JFinalCfg.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/util/JFinalCfg.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/wetech/czl/controller/RegisterController.class" afterPath="$PROJECT_DIR$/target/classes/top/wetech/czl/controller/RegisterController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/wetech/czl/model/Article.class" afterPath="$PROJECT_DIR$/target/classes/top/wetech/czl/model/Article.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/top/wetech/czl/model/User.class" afterPath="$PROJECT_DIR$/target/classes/top/wetech/czl/model/User.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/top/wetech/czl/util/JFinalCfg.class" afterPath="$PROJECT_DIR$/target/classes/top/wetech/czl/util/JFinalCfg.class" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/logging.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/tomcat-users.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/web.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-02-03" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-02-04" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-02-05" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-02-06" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-02-07" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-02-10" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-02-14" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-02-21" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-02-22" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-02-24" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-02-26" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-02-27" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-02-28" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-03-01" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-03-04" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-03-05" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-03-06" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-03-07" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-03-08" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/login_jsp.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/login_jsp.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/ok_jsp.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/ok_jsp.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/personal/welcome_jsp.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/personal/welcome_jsp.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/publish_jsp.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/publish_jsp.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/register_jsp.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/register_jsp.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/theOK_jsp.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/theOK_jsp.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/welcome_jsp.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/welcome_jsp.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/dataQuery/org/apache/jsp/index_jsp.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/dataQuery/org/apache/jsp/index_jsp.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/dataQuery/org/apache/jsp/login_jsp.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/dataQuery/org/apache/jsp/login_jsp.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/dataQuery/org/apache/jsp/ok_jsp.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/dataQuery/org/apache/jsp/ok_jsp.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/dataQuery/org/apache/jsp/register_jsp.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/dataQuery/org/apache/jsp/register_jsp.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/dataQuery/org/apache/jsp/theOK_jsp.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/dataQuery/org/apache/jsp/theOK_jsp.java" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +84,8 @@
       <file leaf-file-name="JFinalCfg.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/util/JFinalCfg.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="40" column="38" lean-forward="false" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+            <state relative-caret-position="271">
+              <caret line="32" column="39" lean-forward="false" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -30,38 +94,8 @@
       <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="log.error.file" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log/log.error.file">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="236" column="52" lean-forward="false" selection-start-line="236" selection-start-column="52" selection-end-line="236" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="210" column="20" lean-forward="false" selection-start-line="210" selection-start-column="20" selection-end-line="210" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/IndexController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="86">
+              <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -70,50 +104,19 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="161" column="107" lean-forward="false" selection-start-line="161" selection-start-column="62" selection-end-line="161" selection-end-column="107" />
-              <folding>
-                <element signature="e#1786#1787#0" expanded="true" />
-                <element signature="e#1811#1812#0" expanded="true" />
-                <element signature="e#1844#1845#0" expanded="true" />
-                <element signature="e#1872#1873#0" expanded="true" />
-                <element signature="e#1902#1903#0" expanded="true" />
-                <element signature="e#1928#1929#0" expanded="true" />
-                <element signature="e#1966#1967#0" expanded="true" />
-                <element signature="e#1996#1997#0" expanded="true" />
-                <element signature="e#2028#2029#0" expanded="true" />
-                <element signature="e#2056#2057#0" expanded="true" />
-                <element signature="e#2098#2099#0" expanded="true" />
-                <element signature="e#2132#2133#0" expanded="true" />
-                <element signature="e#2165#2166#0" expanded="true" />
-                <element signature="e#2194#2195#0" expanded="true" />
-                <element signature="e#2238#2239#0" expanded="true" />
-                <element signature="e#2274#2275#0" expanded="true" />
-                <element signature="e#2306#2307#0" expanded="true" />
-                <element signature="e#2334#2335#0" expanded="true" />
-                <element signature="e#2376#2377#0" expanded="true" />
-                <element signature="e#2410#2411#0" expanded="true" />
-                <element signature="e#2437#2438#0" expanded="true" />
-                <element signature="e#2462#2463#0" expanded="true" />
-                <element signature="e#2496#2497#0" expanded="true" />
-                <element signature="e#2524#2525#0" expanded="true" />
-                <element signature="e#2557#2558#0" expanded="true" />
-                <element signature="e#2586#2587#0" expanded="true" />
-                <element signature="e#2630#2631#0" expanded="true" />
-                <element signature="e#2666#2667#0" expanded="true" />
-                <element signature="e#2701#2702#0" expanded="true" />
-                <element signature="e#2732#2733#0" expanded="true" />
-                <element signature="e#2780#2781#0" expanded="true" />
-                <element signature="e#2820#2821#0" expanded="true" />
-                <element signature="e#2855#2856#0" expanded="true" />
-                <element signature="e#2888#2889#0" expanded="true" />
-                <element signature="e#2938#2939#0" expanded="true" />
-                <element signature="e#2982#2983#0" expanded="true" />
-                <element signature="e#3017#3018#0" expanded="true" />
-                <element signature="e#3050#3051#0" expanded="true" />
-                <element signature="e#3100#3101#0" expanded="true" />
-                <element signature="e#3144#3145#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="114">
+              <caret line="37" column="24" lean-forward="false" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/RegisterController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -221,17 +224,17 @@
         <option value="$PROJECT_DIR$/src/main/webapp/page/2/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/util/StringUtil.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Fans.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Comments.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/RegisterController.java" />
         <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/SystemController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Article.java" />
         <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Replies.java" />
         <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Records.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Fans.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Comments.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Article.java" />
         <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/util/JFinalCfg.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/User.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/RegisterController.java" />
       </list>
     </option>
   </component>
@@ -262,10 +265,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1932" />
-    <option name="height" value="1056" />
+    <option name="x" value="-7" />
+    <option name="width" value="1378" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -286,12 +288,19 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="WebsiteProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="WebsiteProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebsiteProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebsiteProject" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="WebsiteProject" type="b2602c69:ProjectViewProjectNode" />
@@ -347,14 +356,48 @@
               <item name="WebsiteProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="czl" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebsiteProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebsiteProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebsiteProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebsiteProject" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebsiteProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="WebsiteProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: net.sf.ezmorph:ezmorph:1.0.6" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="WebsiteProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: net.sf.ezmorph:ezmorph:1.0.6" type="70bed36:NamedLibraryElementNode" />
+              <item name="ezmorph-1.0.6.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebsiteProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: net.sf.ezmorph:ezmorph:1.0.6" type="70bed36:NamedLibraryElementNode" />
+              <item name="ezmorph-1.0.6.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="ezmorph" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -702,41 +745,64 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34576000" />
+    <option name="totallyTimeSpent" value="39489000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32612613" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295107" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4330254" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43396226" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792792" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22109208" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26407915" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3117117" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.295612" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295107" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.295612" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32711864" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4330254" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22109208" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -794,26 +860,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/LoginController.java</url>
-          <line>21</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/2017/12/18/hello-world/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-344">
-          <caret line="505" column="69" lean-forward="false" selection-start-line="505" selection-start-column="69" selection-end-line="505" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/2017/12/19/createWebsiteHelp/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
@@ -1044,13 +1095,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="47" lean-forward="false" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
@@ -1058,206 +1102,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/RegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="30" column="34" lean-forward="false" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/SystemController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="35" column="44" lean-forward="false" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Article.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="e#1619#1620#0" expanded="false" />
-            <element signature="e#1644#1645#0" expanded="false" />
-            <element signature="e#1677#1678#0" expanded="false" />
-            <element signature="e#1705#1706#0" expanded="false" />
-            <element signature="e#1735#1736#0" expanded="false" />
-            <element signature="e#1761#1762#0" expanded="false" />
-            <element signature="e#1799#1800#0" expanded="false" />
-            <element signature="e#1829#1830#0" expanded="false" />
-            <element signature="e#1859#1860#0" expanded="false" />
-            <element signature="e#1885#1886#0" expanded="false" />
-            <element signature="e#1923#1924#0" expanded="false" />
-            <element signature="e#1953#1954#0" expanded="false" />
-            <element signature="e#1985#1986#0" expanded="false" />
-            <element signature="e#2013#2014#0" expanded="false" />
-            <element signature="e#2055#2056#0" expanded="false" />
-            <element signature="e#2089#2090#0" expanded="false" />
-            <element signature="e#2125#2126#0" expanded="false" />
-            <element signature="e#2157#2158#0" expanded="false" />
-            <element signature="e#2207#2208#0" expanded="false" />
-            <element signature="e#2249#2250#0" expanded="false" />
-            <element signature="e#2283#2284#0" expanded="false" />
-            <element signature="e#2313#2314#0" expanded="false" />
-            <element signature="e#2359#2360#0" expanded="false" />
-            <element signature="e#2397#2398#0" expanded="false" />
-            <element signature="e#2428#2429#0" expanded="false" />
-            <element signature="e#2455#2456#0" expanded="false" />
-            <element signature="e#2495#2496#0" expanded="false" />
-            <element signature="e#2527#2528#0" expanded="false" />
-            <element signature="e#2557#2558#0" expanded="false" />
-            <element signature="e#2586#2587#0" expanded="false" />
-            <element signature="e#2627#2628#0" expanded="false" />
-            <element signature="e#2663#2664#0" expanded="false" />
-            <element signature="e#2691#2692#0" expanded="false" />
-            <element signature="e#2718#2719#0" expanded="false" />
-            <element signature="e#2755#2756#0" expanded="false" />
-            <element signature="e#2787#2788#0" expanded="false" />
-            <element signature="e#2822#2823#0" expanded="false" />
-            <element signature="e#2855#2856#0" expanded="false" />
-            <element signature="e#2905#2906#0" expanded="false" />
-            <element signature="e#2949#2950#0" expanded="false" />
-            <element signature="e#2984#2985#0" expanded="false" />
-            <element signature="e#3017#3018#0" expanded="false" />
-            <element signature="e#3067#3068#0" expanded="false" />
-            <element signature="e#3111#3112#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Records.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#694#695#0" expanded="false" />
-            <element signature="e#719#720#0" expanded="false" />
-            <element signature="e#752#753#0" expanded="false" />
-            <element signature="e#780#781#0" expanded="false" />
-            <element signature="e#810#811#0" expanded="false" />
-            <element signature="e#836#837#0" expanded="false" />
-            <element signature="e#874#875#0" expanded="false" />
-            <element signature="e#904#905#0" expanded="false" />
-            <element signature="e#934#935#0" expanded="false" />
-            <element signature="e#960#961#0" expanded="false" />
-            <element signature="e#998#999#0" expanded="false" />
-            <element signature="e#1028#1029#0" expanded="false" />
-            <element signature="e#1064#1065#0" expanded="false" />
-            <element signature="e#1098#1099#0" expanded="false" />
-            <element signature="e#1150#1151#0" expanded="false" />
-            <element signature="e#1196#1197#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Comments.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="103" column="94" lean-forward="false" selection-start-line="103" selection-start-column="37" selection-end-line="103" selection-end-column="94" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#899#900#0" expanded="false" />
-            <element signature="e#924#925#0" expanded="false" />
-            <element signature="e#957#958#0" expanded="false" />
-            <element signature="e#985#986#0" expanded="false" />
-            <element signature="e#1015#1016#0" expanded="false" />
-            <element signature="e#1041#1042#0" expanded="false" />
-            <element signature="e#1079#1080#0" expanded="false" />
-            <element signature="e#1109#1110#0" expanded="false" />
-            <element signature="e#1139#1140#0" expanded="false" />
-            <element signature="e#1165#1166#0" expanded="false" />
-            <element signature="e#1203#1204#0" expanded="false" />
-            <element signature="e#1233#1234#0" expanded="false" />
-            <element signature="e#1267#1268#0" expanded="false" />
-            <element signature="e#1297#1298#0" expanded="false" />
-            <element signature="e#1343#1344#0" expanded="false" />
-            <element signature="e#1381#1382#0" expanded="false" />
-            <element signature="e#1409#1410#0" expanded="false" />
-            <element signature="e#1436#1437#0" expanded="false" />
-            <element signature="e#1473#1474#0" expanded="false" />
-            <element signature="e#1505#1506#0" expanded="false" />
-            <element signature="e#1536#1537#0" expanded="false" />
-            <element signature="e#1566#1567#0" expanded="false" />
-            <element signature="e#1609#1610#0" expanded="false" />
-            <element signature="e#1647#1648#0" expanded="false" />
-            <element signature="e#1682#1683#0" expanded="false" />
-            <element signature="e#1715#1716#0" expanded="false" />
-            <element signature="e#1765#1766#0" expanded="false" />
-            <element signature="e#1809#1810#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Fans.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="28" column="22" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="28" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#743#744#0" expanded="false" />
-            <element signature="e#768#769#0" expanded="false" />
-            <element signature="e#801#802#0" expanded="false" />
-            <element signature="e#829#830#0" expanded="false" />
-            <element signature="e#859#860#0" expanded="false" />
-            <element signature="e#885#886#0" expanded="false" />
-            <element signature="e#923#924#0" expanded="false" />
-            <element signature="e#953#954#0" expanded="false" />
-            <element signature="e#983#984#0" expanded="false" />
-            <element signature="e#1009#1010#0" expanded="false" />
-            <element signature="e#1047#1048#0" expanded="false" />
-            <element signature="e#1077#1078#0" expanded="false" />
-            <element signature="e#1110#1111#0" expanded="false" />
-            <element signature="e#1141#1142#0" expanded="false" />
-            <element signature="e#1187#1188#0" expanded="false" />
-            <element signature="e#1227#1228#0" expanded="false" />
-            <element signature="e#1261#1262#0" expanded="false" />
-            <element signature="e#1293#1294#0" expanded="false" />
-            <element signature="e#1341#1342#0" expanded="false" />
-            <element signature="e#1383#1384#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Replies.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#893#894#0" expanded="false" />
-            <element signature="e#918#919#0" expanded="false" />
-            <element signature="e#951#952#0" expanded="false" />
-            <element signature="e#979#980#0" expanded="false" />
-            <element signature="e#1009#1010#0" expanded="false" />
-            <element signature="e#1035#1036#0" expanded="false" />
-            <element signature="e#1073#1074#0" expanded="false" />
-            <element signature="e#1103#1104#0" expanded="false" />
-            <element signature="e#1133#1134#0" expanded="false" />
-            <element signature="e#1159#1160#0" expanded="false" />
-            <element signature="e#1197#1198#0" expanded="false" />
-            <element signature="e#1227#1228#0" expanded="false" />
-            <element signature="e#1261#1262#0" expanded="false" />
-            <element signature="e#1291#1292#0" expanded="false" />
-            <element signature="e#1337#1338#0" expanded="false" />
-            <element signature="e#1375#1376#0" expanded="false" />
-            <element signature="e#1403#1404#0" expanded="false" />
-            <element signature="e#1430#1431#0" expanded="false" />
-            <element signature="e#1467#1468#0" expanded="false" />
-            <element signature="e#1499#1500#0" expanded="false" />
-            <element signature="e#1530#1531#0" expanded="false" />
-            <element signature="e#1560#1561#0" expanded="false" />
-            <element signature="e#1603#1604#0" expanded="false" />
-            <element signature="e#1641#1642#0" expanded="false" />
-            <element signature="e#1676#1677#0" expanded="false" />
-            <element signature="e#1709#1710#0" expanded="false" />
-            <element signature="e#1759#1760#0" expanded="false" />
-            <element signature="e#1803#1804#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="667">
+          <caret line="34" column="152" lean-forward="false" selection-start-line="34" selection-start-column="152" selection-end-line="34" selection-end-column="152" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1273,15 +1122,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1081">
           <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="210" column="20" lean-forward="false" selection-start-line="210" selection-start-column="20" selection-end-line="210" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1289,15 +1129,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="236" column="52" lean-forward="false" selection-start-line="236" selection-start-column="52" selection-end-line="236" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/util/JFinalCfg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="40" column="38" lean-forward="false" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1305,90 +1136,109 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
           <folding>
-            <marker date="1511751614642" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1511751614642" expanded="false" signature="138:320" ph="..." />
-            <marker date="1511751614642" expanded="true" signature="718:725" ph="{}" />
-            <marker date="1511751614642" expanded="true" signature="787:937" ph="{...}" />
-            <marker date="1511751614642" expanded="true" signature="1053:1216" ph="{...}" />
-            <marker date="1511751614642" expanded="true" signature="1243:2244" ph="{...}" />
-            <marker date="1511751614642" expanded="true" signature="2282:2450" ph="{...}" />
-            <marker date="1511751614642" expanded="true" signature="2500:2669" ph="{...}" />
-            <marker date="1511751614642" expanded="false" signature="2700:2711" ph=" { " />
-            <marker date="1511751614642" expanded="false" signature="2728:2734" ph=" }" />
-            <marker date="1511751614642" expanded="false" signature="2764:2775" ph=" { " />
-            <marker date="1511751614642" expanded="false" signature="2794:2800" ph=" }" />
-            <marker date="1511751614642" expanded="false" signature="2831:2842" ph=" { " />
-            <marker date="1511751614642" expanded="false" signature="2909:2915" ph=" }" />
-            <marker date="1511751614642" expanded="false" signature="2950:2961" ph=" { " />
-            <marker date="1511751614642" expanded="false" signature="3042:3048" ph=" }" />
-            <marker date="1511751614642" expanded="false" signature="3083:3094" ph=" { " />
-            <marker date="1511751614642" expanded="false" signature="3118:3124" ph=" }" />
-            <marker date="1511751614642" expanded="false" signature="3176:3187" ph=" { " />
-            <marker date="1511751614642" expanded="false" signature="3218:3224" ph=" }" />
-            <marker date="1511751614642" expanded="true" signature="3264:3473" ph="{...}" />
-            <marker date="1511751614642" expanded="true" signature="3508:3720" ph="{...}" />
-            <marker date="1511751614642" expanded="true" signature="3759:3975" ph="{...}" />
-            <marker date="1511751614642" expanded="true" signature="4009:4220" ph="{...}" />
-            <marker date="1511751614642" expanded="false" signature="4261:4272" ph=" { " />
-            <marker date="1511751614642" expanded="false" signature="4299:4305" ph=" }" />
+            <element signature="e#12134#12138#0" expanded="false" />
+            <element signature="e#12146#12152#0" expanded="false" />
+            <element signature="e#12167#12173#0" expanded="false" />
+            <element signature="e#12364#12368#0" expanded="false" />
+            <element signature="e#12375#12381#0" expanded="false" />
+            <element signature="e#12443#12449#0" expanded="false" />
+            <element signature="e#12754#12760#1" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Records.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="69" column="9" lean-forward="true" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Fans.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="87" column="45" lean-forward="true" selection-start-line="87" selection-start-column="45" selection-end-line="87" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Replies.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="99" column="9" lean-forward="false" selection-start-line="96" selection-start-column="8" selection-end-line="99" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Article.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="179" column="26" lean-forward="true" selection-start-line="179" selection-start-column="26" selection-end-line="179" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Comments.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="104" column="53" lean-forward="true" selection-start-line="104" selection-start-column="53" selection-end-line="104" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="234" column="29" lean-forward="false" selection-start-line="234" selection-start-column="29" selection-end-line="234" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/util/JFinalCfg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="32" column="39" lean-forward="false" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/RegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="161" column="107" lean-forward="false" selection-start-line="161" selection-start-column="62" selection-end-line="161" selection-end-column="107" />
-          <folding>
-            <element signature="e#1786#1787#0" expanded="true" />
-            <element signature="e#1811#1812#0" expanded="true" />
-            <element signature="e#1844#1845#0" expanded="true" />
-            <element signature="e#1872#1873#0" expanded="true" />
-            <element signature="e#1902#1903#0" expanded="true" />
-            <element signature="e#1928#1929#0" expanded="true" />
-            <element signature="e#1966#1967#0" expanded="true" />
-            <element signature="e#1996#1997#0" expanded="true" />
-            <element signature="e#2028#2029#0" expanded="true" />
-            <element signature="e#2056#2057#0" expanded="true" />
-            <element signature="e#2098#2099#0" expanded="true" />
-            <element signature="e#2132#2133#0" expanded="true" />
-            <element signature="e#2165#2166#0" expanded="true" />
-            <element signature="e#2194#2195#0" expanded="true" />
-            <element signature="e#2238#2239#0" expanded="true" />
-            <element signature="e#2274#2275#0" expanded="true" />
-            <element signature="e#2306#2307#0" expanded="true" />
-            <element signature="e#2334#2335#0" expanded="true" />
-            <element signature="e#2376#2377#0" expanded="true" />
-            <element signature="e#2410#2411#0" expanded="true" />
-            <element signature="e#2437#2438#0" expanded="true" />
-            <element signature="e#2462#2463#0" expanded="true" />
-            <element signature="e#2496#2497#0" expanded="true" />
-            <element signature="e#2524#2525#0" expanded="true" />
-            <element signature="e#2557#2558#0" expanded="true" />
-            <element signature="e#2586#2587#0" expanded="true" />
-            <element signature="e#2630#2631#0" expanded="true" />
-            <element signature="e#2666#2667#0" expanded="true" />
-            <element signature="e#2701#2702#0" expanded="true" />
-            <element signature="e#2732#2733#0" expanded="true" />
-            <element signature="e#2780#2781#0" expanded="true" />
-            <element signature="e#2820#2821#0" expanded="true" />
-            <element signature="e#2855#2856#0" expanded="true" />
-            <element signature="e#2888#2889#0" expanded="true" />
-            <element signature="e#2938#2939#0" expanded="true" />
-            <element signature="e#2982#2983#0" expanded="true" />
-            <element signature="e#3017#3018#0" expanded="true" />
-            <element signature="e#3050#3051#0" expanded="true" />
-            <element signature="e#3100#3101#0" expanded="true" />
-            <element signature="e#3144#3145#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="114">
+          <caret line="37" column="24" lean-forward="false" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="47" lean-forward="false" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+        <state relative-caret-position="86">
+          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
           <folding />
         </state>
       </provider>

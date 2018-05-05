@@ -164,6 +164,14 @@ public class Article extends Model<Article> {
 
     @Override
     public String toString() {
+        String createTimeStr = "";
+        String updateTimeStr = "";
+        if (createtime != null){
+            createTimeStr = StringUtil.formatY_M_D_HMS.format(createtime);
+        }
+        if (updatetime != null){
+            updateTimeStr = StringUtil.formatY_M_D_HMS.format(updatetime);
+        }
         return "{" +
                 "\"id\":" + id +
                 ", \"mid\":\"" + mid + "\"" +
@@ -174,8 +182,8 @@ public class Article extends Model<Article> {
                 ", \"tags\":\"" + tags + "\"" +
                 ", \"clicks\":" + clicks +
                 ", \"fans\":" + fans +
-                ", \"createtime\":\"" + StringUtil.formatY_M_D_HMS.format(createtime) + "\"" +
-                ", \"updatetime\":\"" + StringUtil.formatY_M_D_HMS.format(updatetime) + "\"" +
+                ", \"createtime\":\"" + createTimeStr + "\"" +
+                ", \"updatetime\":\"" + updateTimeStr + "\"" +
                 "}";
     }
 }

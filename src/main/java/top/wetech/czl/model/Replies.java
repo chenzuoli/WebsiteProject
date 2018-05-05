@@ -94,6 +94,10 @@ public class Replies extends Model<Replies> {
 
     @Override
     public String toString() {
+        String createTimeStr = "";
+        if (createtime != null){
+            createTimeStr = StringUtil.formatY_M_D_HMS.format(createtime);
+        }
         return "{" +
                 "\"id\"=" + id +
                 ", \"cid\"=\"" + cid + "\"" +
@@ -101,7 +105,7 @@ public class Replies extends Model<Replies> {
                 ", \"comment\"=\"" + comment + "\"" +
                 ", \"like\"=" + like +
                 ", \"trample\"=" + trample +
-                ", \"createtime\"=\"" + StringUtil.formatY_M_D_HMS.format(createtime) + "\"" +
+                ", \"createtime\"=\"" + createTimeStr + "\"" +
                 "}";
     }
 }
