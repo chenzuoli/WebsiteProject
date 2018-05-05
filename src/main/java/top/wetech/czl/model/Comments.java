@@ -23,7 +23,7 @@ public class Comments extends Model<Comments> {
 
     public static final Comments dao = new Comments();
 
-    private Comments() {
+    public Comments() {
     }
 
     public Comments(int id, String aid, String uid, String comment, int like, int trample, Date createtime) {

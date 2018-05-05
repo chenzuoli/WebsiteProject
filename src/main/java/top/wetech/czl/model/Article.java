@@ -159,7 +159,7 @@ public class Article extends Model<Article> {
         this.updatetime = updatetime;
     }
 
-    private Article() {
+    public Article() {
     }
 
     @Override

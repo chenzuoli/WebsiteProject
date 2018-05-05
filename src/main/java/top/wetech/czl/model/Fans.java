@@ -21,7 +21,7 @@ public class Fans extends Model<Fans> {
 
     public static final Fans dao = new Fans();
 
-    private Fans() {
+    public Fans() {
     }
 
     public Fans(int id, String fid, String aid, Date lovetime, Date leavetime) {

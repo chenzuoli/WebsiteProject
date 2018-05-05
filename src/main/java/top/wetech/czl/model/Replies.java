@@ -23,7 +23,7 @@ public class Replies extends Model<Replies> {
 
     public static final Replies dao = new Replies();
 
-    private Replies() {
+    public Replies() {
     }
 
     public Replies(int id, String cid, String uid, String comment, int like, int trample, Date createtime) {

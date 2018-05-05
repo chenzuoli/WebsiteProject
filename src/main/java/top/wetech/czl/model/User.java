@@ -36,12 +36,12 @@ public class User extends Model<User> {
      * @return
      */
     public List<User> findByIdAndPassword(String uid, String password) {
-        List<User> users = find("select id, uid, uname, mobile, email, qq, wechat, password, createtime, updatetime from users where uid = '" + uid + "' and password = '" + password + "'");
+        List<User> users = find("select id, uid, uname, mobile, email, qq, wechat, password, createtime, updatetime from users where uid = ? and password = ?", uid, password);
         return users;
     }
 
     public List<User> findById(String uid) {
-        List<User> users = find("select id, uid, uname, mobile, email, qq, wechat, password, createtime, updatetime from users where uid = '" + uid + "'");
+        List<User> users = find("select id, uid, uname, mobile, email, qq, wechat, password, createtime, updatetime from users where uid = ?", uid);
         return users;
     }
 

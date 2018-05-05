@@ -27,7 +27,7 @@ public class Records extends Model<Records>{
         this.observetime = observetime;
     }
 
-    private Records() {
+    public Records() {
     }
 
     public int getId() {
