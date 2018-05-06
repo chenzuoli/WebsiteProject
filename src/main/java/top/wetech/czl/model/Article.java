@@ -14,6 +14,7 @@ import java.util.UUID;
  * @Discription: 文章model，提供查询、存储文章功能
  */
 public class Article extends Model<Article> {
+    public static final Article dao = new Article();
     private int id;
     private String mid;
     private String uid;
@@ -26,7 +27,22 @@ public class Article extends Model<Article> {
     private Date createtime;
     private Date updatetime;
 
-    public static final Article dao = new Article();
+    public Article(int id, String mid, String uid, String title, String articleid, String content, String tags, int clicks, int fans, Date createtime, Date updatetime) {
+        this.id = id;
+        this.mid = mid;
+        this.uid = uid;
+        this.title = title;
+        this.articleid = articleid;
+        this.content = content;
+        this.tags = tags;
+        this.clicks = clicks;
+        this.fans = fans;
+        this.createtime = createtime;
+        this.updatetime = updatetime;
+    }
+
+    public Article() {
+    }
 
     /**
      * 保存文章到数据库
@@ -51,7 +67,7 @@ public class Article extends Model<Article> {
         Article article = null;
         String queryArticleSql = "select mid, uid, title, articleid, content, tags, clicks, fans, createtime, updatetime from articles where articleid = ?";
         List<Article> articles = find(queryArticleSql, articleId);
-        if (articles.size() > 0){
+        if (articles.size() > 0) {
             article = articles.get(0);
         }
         return article;
@@ -145,31 +161,14 @@ public class Article extends Model<Article> {
         this.updatetime = updatetime;
     }
 
-    public Article(int id, String mid, String uid, String title, String articleid, String content, String tags, int clicks, int fans, Date createtime, Date updatetime) {
-        this.id = id;
-        this.mid = mid;
-        this.uid = uid;
-        this.title = title;
-        this.articleid = articleid;
-        this.content = content;
-        this.tags = tags;
-        this.clicks = clicks;
-        this.fans = fans;
-        this.createtime = createtime;
-        this.updatetime = updatetime;
-    }
-
-    public Article() {
-    }
-
     @Override
     public String toString() {
         String createTimeStr = "";
         String updateTimeStr = "";
-        if (createtime != null){
+        if (createtime != null) {
             createTimeStr = StringUtil.formatY_M_D_HMS.format(createtime);
         }
-        if (updatetime != null){
+        if (updatetime != null) {
             updateTimeStr = StringUtil.formatY_M_D_HMS.format(updatetime);
         }
         return "{" +

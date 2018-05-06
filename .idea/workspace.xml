@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca1de463-6344-4765-a183-e89b82de324e" name="Default" comment="">
+    <list default="true" id="ca1de463-6344-4765-a183-e89b82de324e" name="Default" comment="code format">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/WebsiteProject.iml" afterPath="$PROJECT_DIR$/WebsiteProject.iml" />
-      <change beforePath="$PROJECT_DIR$/log/log.debug.file" afterPath="$PROJECT_DIR$/log/log.debug.file" />
-      <change beforePath="$PROJECT_DIR$/log/log.error.file" afterPath="$PROJECT_DIR$/log/log.error.file" />
-      <change beforePath="$PROJECT_DIR$/log/log.info.file" afterPath="$PROJECT_DIR$/log/log.info.file" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/IndexController.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/IndexController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/RegisterController.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/RegisterController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/SystemController.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/SystemController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Article.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Article.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Comments.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Comments.java" />
@@ -14,9 +13,167 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Records.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Records.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Replies.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Replies.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/User.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/top/wetech/czl/controller/LoginController.class" afterPath="$PROJECT_DIR$/target/classes/top/wetech/czl/controller/LoginController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/top/wetech/czl/controller/SystemController.class" afterPath="$PROJECT_DIR$/target/classes/top/wetech/czl/controller/SystemController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/top/wetech/czl/model/Article.class" afterPath="$PROJECT_DIR$/target/classes/top/wetech/czl/model/Article.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/util/JFinalCfg.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/util/JFinalCfg.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/wetech/czl/util/StringUtil.java" afterPath="$PROJECT_DIR$/src/main/java/top/wetech/czl/util/StringUtil.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/2017/12/16/chenzuoli/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/2017/12/16/chenzuoli/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/2017/12/18/hello-world/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/2017/12/18/hello-world/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/2017/12/19/createWebsiteHelp/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/2017/12/19/createWebsiteHelp/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/2017/12/23/hello-world/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/2017/12/23/hello-world/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/2017/12/25/linux高效编程/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/2017/12/25/linux高效编程/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/2017/12/26/spark基于zookeeper的高可用搭建/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/2017/12/26/spark基于zookeeper的高可用搭建/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/2017/12/26/单台服务器安装spark、hadoop服务文档/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/2017/12/26/单台服务器安装spark、hadoop服务文档/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/2017/12/26/搭建maven私服nexus/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/2017/12/26/搭建maven私服nexus/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/2017/12/28/Windows远程连接linux图形界面配置详解/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/2017/12/28/Windows远程连接linux图形界面配置详解/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/2018/02/03/c3p0数据库连接池的使用方法/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/2018/02/03/c3p0数据库连接池的使用方法/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/2018/02/07/ubuntu防火墙操作/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/2018/02/07/ubuntu防火墙操作/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/2018/02/08/windows下vim打开文件中文乱码/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/2018/02/08/windows下vim打开文件中文乱码/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/2018/03/10/Git服务器端配置详解/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/2018/03/10/Git服务器端配置详解/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/2018/03/10/ambari管理监控hadoop生态系统的环境安装及问题解答/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/2018/03/10/ambari管理监控hadoop生态系统的环境安装及问题解答/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/about/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/about/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/archives/2017/12/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/archives/2017/12/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/archives/2017/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/archives/2017/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/archives/2018/02/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/archives/2018/02/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/archives/2018/03/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/archives/2018/03/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/archives/2018/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/archives/2018/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/archives/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/archives/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/archives/page/2/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/archives/page/2/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/categories/git/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/categories/git/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/categories/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/categories/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/categories/maven/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/categories/maven/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/categories/ubuntu/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/categories/ubuntu/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/categories/大数据/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/categories/大数据/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/categories/操作系统/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/categories/操作系统/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/categories/数据库/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/categories/数据库/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/categories/环境安装/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/categories/环境安装/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/bootstrap.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/comment.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/comment.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/fashion.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/fashion.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/src/main/webapp/css/fonts/fontawesome-webfont.svg" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/glyphs.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/glyphs.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/main.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style1.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/style1.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/fancybox/helpers/jquery.fancybox-buttons.css" afterPath="$PROJECT_DIR$/src/main/webapp/fancybox/helpers/jquery.fancybox-buttons.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/fancybox/helpers/jquery.fancybox-buttons.js" afterPath="$PROJECT_DIR$/src/main/webapp/fancybox/helpers/jquery.fancybox-buttons.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/fancybox/helpers/jquery.fancybox-media.js" afterPath="$PROJECT_DIR$/src/main/webapp/fancybox/helpers/jquery.fancybox-media.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/fancybox/helpers/jquery.fancybox-thumbs.css" afterPath="$PROJECT_DIR$/src/main/webapp/fancybox/helpers/jquery.fancybox-thumbs.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/fancybox/helpers/jquery.fancybox-thumbs.js" afterPath="$PROJECT_DIR$/src/main/webapp/fancybox/helpers/jquery.fancybox-thumbs.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/fancybox/jquery.fancybox.css" afterPath="$PROJECT_DIR$/src/main/webapp/fancybox/jquery.fancybox.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/fancybox/jquery.fancybox.js" afterPath="$PROJECT_DIR$/src/main/webapp/fancybox/jquery.fancybox.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/algolia_logo.svg" afterPath="$PROJECT_DIR$/src/main/webapp/images/algolia_logo.svg" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/cc-by-nc-nd.svg" afterPath="$PROJECT_DIR$/src/main/webapp/images/cc-by-nc-nd.svg" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/cc-by-nc-sa.svg" afterPath="$PROJECT_DIR$/src/main/webapp/images/cc-by-nc-sa.svg" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/cc-by-nc.svg" afterPath="$PROJECT_DIR$/src/main/webapp/images/cc-by-nc.svg" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/cc-by-nd.svg" afterPath="$PROJECT_DIR$/src/main/webapp/images/cc-by-nd.svg" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/cc-by-sa.svg" afterPath="$PROJECT_DIR$/src/main/webapp/images/cc-by-sa.svg" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/cc-by.svg" afterPath="$PROJECT_DIR$/src/main/webapp/images/cc-by.svg" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/cc-zero.svg" afterPath="$PROJECT_DIR$/src/main/webapp/images/cc-zero.svg" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/logo.svg" afterPath="$PROJECT_DIR$/src/main/webapp/images/logo.svg" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/quote-l.svg" afterPath="$PROJECT_DIR$/src/main/webapp/images/quote-l.svg" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/quote-r.svg" afterPath="$PROJECT_DIR$/src/main/webapp/images/quote-r.svg" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/index.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/index.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/insight.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/insight.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/main.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/main.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/script.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/script.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/src/affix.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/src/affix.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/src/algolia-search.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/src/algolia-search.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/src/bootstrap.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/src/bootstrap.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/src/exturl.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/src/exturl.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/src/hook-duoshuo.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/src/hook-duoshuo.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/src/js.cookie.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/src/js.cookie.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/src/motion.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/src/motion.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/src/post-details.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/src/post-details.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/src/schemes/pisces.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/src/schemes/pisces.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/src/scroll-cookie.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/src/scroll-cookie.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/src/scrollspy.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/src/scrollspy.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/src/utils.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/src/utils.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/src/wangEditor.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/src/wangEditor.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/totop.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/totop.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/Han/dist/han.css" afterPath="$PROJECT_DIR$/src/main/webapp/lib/Han/dist/han.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/Han/dist/han.js" afterPath="$PROJECT_DIR$/src/main/webapp/lib/Han/dist/han.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/canvas-ribbon/canvas-ribbon.js" afterPath="$PROJECT_DIR$/src/main/webapp/lib/canvas-ribbon/canvas-ribbon.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/fancybox/source/helpers/jquery.fancybox-buttons.css" afterPath="$PROJECT_DIR$/src/main/webapp/lib/fancybox/source/helpers/jquery.fancybox-buttons.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/fancybox/source/helpers/jquery.fancybox-buttons.js" afterPath="$PROJECT_DIR$/src/main/webapp/lib/fancybox/source/helpers/jquery.fancybox-buttons.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/fancybox/source/helpers/jquery.fancybox-media.js" afterPath="$PROJECT_DIR$/src/main/webapp/lib/fancybox/source/helpers/jquery.fancybox-media.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/fancybox/source/helpers/jquery.fancybox-thumbs.css" afterPath="$PROJECT_DIR$/src/main/webapp/lib/fancybox/source/helpers/jquery.fancybox-thumbs.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/fancybox/source/helpers/jquery.fancybox-thumbs.js" afterPath="$PROJECT_DIR$/src/main/webapp/lib/fancybox/source/helpers/jquery.fancybox-thumbs.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/fancybox/source/jquery.fancybox.css" afterPath="$PROJECT_DIR$/src/main/webapp/lib/fancybox/source/jquery.fancybox.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/fancybox/source/jquery.fancybox.js" afterPath="$PROJECT_DIR$/src/main/webapp/lib/fancybox/source/jquery.fancybox.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/fastclick/README.html" afterPath="$PROJECT_DIR$/src/main/webapp/lib/fastclick/README.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/fastclick/bower.json" afterPath="$PROJECT_DIR$/src/main/webapp/lib/fastclick/bower.json" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/fastclick/lib/fastclick.js" afterPath="$PROJECT_DIR$/src/main/webapp/lib/fastclick/lib/fastclick.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/font-awesome/bower.json" afterPath="$PROJECT_DIR$/src/main/webapp/lib/font-awesome/bower.json" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/src/main/webapp/lib/font-awesome/css/font-awesome.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/font-awesome/css/font-awesome.css.map" afterPath="$PROJECT_DIR$/src/main/webapp/lib/font-awesome/css/font-awesome.css.map" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/font-awesome/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/src/main/webapp/lib/font-awesome/fonts/fontawesome-webfont.svg" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/jquery_lazyload/CONTRIBUTING.html" afterPath="$PROJECT_DIR$/src/main/webapp/lib/jquery_lazyload/CONTRIBUTING.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/jquery_lazyload/README.html" afterPath="$PROJECT_DIR$/src/main/webapp/lib/jquery_lazyload/README.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/jquery_lazyload/bower.json" afterPath="$PROJECT_DIR$/src/main/webapp/lib/jquery_lazyload/bower.json" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/jquery_lazyload/jquery.lazyload.js" afterPath="$PROJECT_DIR$/src/main/webapp/lib/jquery_lazyload/jquery.lazyload.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/jquery_lazyload/jquery.scrollstop.js" afterPath="$PROJECT_DIR$/src/main/webapp/lib/jquery_lazyload/jquery.scrollstop.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/needsharebutton/font-embedded.css" afterPath="$PROJECT_DIR$/src/main/webapp/lib/needsharebutton/font-embedded.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/needsharebutton/needsharebutton.css" afterPath="$PROJECT_DIR$/src/main/webapp/lib/needsharebutton/needsharebutton.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/needsharebutton/needsharebutton.js" afterPath="$PROJECT_DIR$/src/main/webapp/lib/needsharebutton/needsharebutton.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/velocity/bower.json" afterPath="$PROJECT_DIR$/src/main/webapp/lib/velocity/bower.json" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/velocity/velocity.js" afterPath="$PROJECT_DIR$/src/main/webapp/lib/velocity/velocity.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/lib/velocity/velocity.ui.js" afterPath="$PROJECT_DIR$/src/main/webapp/lib/velocity/velocity.ui.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.html" afterPath="$PROJECT_DIR$/src/main/webapp/login.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login1.html" afterPath="$PROJECT_DIR$/src/main/webapp/login1.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/no.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/no.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/2/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/page/2/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/personal/welcome.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/personal/welcome.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/publish.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/publish.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/schedule/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/schedule/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/scss/style.scss" afterPath="$PROJECT_DIR$/src/main/webapp/scss/style.scss" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/search.xml" afterPath="$PROJECT_DIR$/src/main/webapp/search.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/signup.html" afterPath="$PROJECT_DIR$/src/main/webapp/signup.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/signup2.html" afterPath="$PROJECT_DIR$/src/main/webapp/signup2.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/ambari/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/ambari/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/blog/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/blog/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/c3p0/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/c3p0/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/git/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/git/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/github-pages/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/github-pages/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/gvim/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/gvim/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/hadoop/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/hadoop/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/hexo-github-pages-blog/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/hexo-github-pages-blog/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/hexo/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/hexo/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/linux-programming-efficient/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/linux-programming-efficient/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/linux/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/linux/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/maven-nexus/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/maven-nexus/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/maven/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/maven/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/nexus/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/nexus/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/programming/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/programming/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/spark-hadoop-singleMode/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/spark-hadoop-singleMode/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/spark-zookeeper-HA/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/spark-zookeeper-HA/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/spark/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/spark/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/ubuntu/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/ubuntu/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/vnc/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/vnc/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/windows-linux-vnc-远程连接/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/windows-linux-vnc-远程连接/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/windows/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/windows/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/zookeeper/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/zookeeper/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/数据库/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/数据库/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tags/防火墙/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/tags/防火墙/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/theOK.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/theOK.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/welcome.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/welcome.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/wetech/czl/controller/IndexController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/wetech/czl/controller/LoginController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/wetech/czl/controller/RegisterController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/wetech/czl/controller/SystemController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/wetech/czl/model/Article.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/wetech/czl/model/User.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/wetech/czl/util/JFinalCfg.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/logging.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/tomcat-users.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/web.xml" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,18 +188,18 @@
       <file leaf-file-name="JFinalCfg.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/util/JFinalCfg.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+            <state relative-caret-position="0">
+              <caret line="35" column="36" lean-forward="false" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="26" column="37" lean-forward="true" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+            <state relative-caret-position="483">
+              <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -51,18 +208,18 @@
       <file leaf-file-name="SystemController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/SystemController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+            <state relative-caret-position="1610">
+              <caret line="77" column="31" lean-forward="false" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegisterController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RegisterController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/RegisterController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="29" column="22" lean-forward="false" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+            <state relative-caret-position="156">
+              <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -71,7 +228,7 @@
       <file leaf-file-name="log.error.file" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/log/log.error.file">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-705">
+            <state relative-caret-position="6394">
               <caret line="278" column="0" lean-forward="false" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
               <folding />
             </state>
@@ -81,8 +238,8 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="38" column="44" lean-forward="false" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+            <state relative-caret-position="782">
+              <caret line="53" column="44" lean-forward="false" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -91,8 +248,8 @@
       <file leaf-file-name="Article.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Article.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1748">
-              <caret line="170" column="9" lean-forward="false" selection-start-line="170" selection-start-column="9" selection-end-line="170" selection-end-column="9" />
+            <state relative-caret-position="2760">
+              <caret line="169" column="9" lean-forward="false" selection-start-line="169" selection-start-column="9" selection-end-line="169" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -203,7 +360,6 @@
         <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/util/JFinalCfg.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/RegisterController.java" />
         <option value="$PROJECT_DIR$/log/log.error.file" />
         <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Article.java" />
         <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Comments.java" />
@@ -212,6 +368,7 @@
         <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Replies.java" />
         <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/SystemController.java" />
         <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/RegisterController.java" />
       </list>
     </option>
   </component>
@@ -264,9 +421,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -375,6 +529,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -564,7 +721,8 @@
       <workItem from="1524841622130" duration="1115000" />
       <workItem from="1524979431765" duration="4033000" />
       <workItem from="1525433013525" duration="4380000" />
-      <workItem from="1525521479728" duration="11116000" />
+      <workItem from="1525521479728" duration="12751000" />
+      <workItem from="1525570302939" duration="799000" />
     </task>
     <task id="LOCAL-00001" summary="添加连接阿里云mysql配置">
       <created>1517758328015</created>
@@ -727,11 +885,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525487729127</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="更新6个接口：&#10;1.登录&#10;2.注册&#10;3.获取主页热门文章&#10;4.按页码获取主页热门文章&#10;5.根据分类获取某个类别的热门文章&#10;6.按页码根据分类获取某个类别的热门文章">
+      <created>1525533462801</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1525533462801</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51260000" />
+    <option name="totallyTimeSpent" value="53694000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -739,6 +904,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32612613" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -747,25 +913,24 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295107" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4330254" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22526637" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22907154" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36396396" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36396396" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32711864" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -820,7 +985,9 @@
     <MESSAGE value="添加接口：&#10;1.根据文章id查询文章详情；&#10;2.查询热点文章，根据点击量从高到低排列返回；&#10;3.注册存储user注册信息；" />
     <MESSAGE value="添加接口：&#10;1.登录验证；&#10;2.注册保存用户信息；" />
     <MESSAGE value="更新登录注册接口及容错" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新登录注册接口及容错" />
+    <MESSAGE value="更新6个接口：&#10;1.登录&#10;2.注册&#10;3.获取主页热门文章&#10;4.按页码获取主页热门文章&#10;5.根据分类获取某个类别的热门文章&#10;6.按页码根据分类获取某个类别的热门文章" />
+    <MESSAGE value="code format" />
+    <option name="LAST_COMMIT_MESSAGE" value="code format" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -829,13 +996,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/2017/12/23/hello-world/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="666" column="69" lean-forward="false" selection-start-line="666" selection-start-column="69" selection-end-line="666" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/2017/12/25/linux高效编程/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
@@ -1074,14 +1234,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -1133,14 +1285,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="50" column="20" lean-forward="false" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/util/JFinalCfg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+        <state relative-caret-position="0">
+          <caret line="35" column="36" lean-forward="false" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -1149,13 +1300,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/log/log.error.file">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-705">
+        <state relative-caret-position="6394">
           <caret line="278" column="0" lean-forward="false" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
           <folding />
         </state>
@@ -1163,40 +1313,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/model/Article.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1748">
-          <caret line="170" column="9" lean-forward="false" selection-start-line="170" selection-start-column="9" selection-end-line="170" selection-end-column="9" />
+        <state relative-caret-position="2760">
+          <caret line="169" column="9" lean-forward="false" selection-start-line="169" selection-start-column="9" selection-end-line="169" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="38" column="44" lean-forward="false" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/SystemController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/RegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="29" column="22" lean-forward="false" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+        <state relative-caret-position="782">
+          <caret line="53" column="44" lean-forward="false" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="26" column="37" lean-forward="true" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+        <state relative-caret-position="483">
+          <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/SystemController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1610">
+          <caret line="77" column="31" lean-forward="false" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/scss/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/wetech/czl/controller/RegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
           <folding />
         </state>
       </provider>

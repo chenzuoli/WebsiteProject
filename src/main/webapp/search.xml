@@ -1,133 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
-  <entry>
-    <title><![CDATA[Git服务器端配置详解]]></title>
-    <url>%2F2018%2F03%2F10%2FGit%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3%2F</url>
-    <content type="text"><![CDATA[我们在公司中，一个项目在开发过程中必定要涉及到同事之间的协同作战，此时代码管理就必不可少了，程序员用的最多的就是git了吧，但是公司的代码是禁止上传到github上的，所以需要自己搭建一个内部的git server服务器供公司内部使用，下面来具体就介绍。本安装教程适用于centos服务器，其他版本linux服务器步骤一样，运行命令会不相同，自己转换即可。配置git server，原理就是将客户端的公钥id_rsa.pub添加到服务端的密钥文件authorized_keys中，多个用户另起一行拼接到该文件中即可。下面介绍安装的两种方法： 方法一：yum安装安装git软件12yum install git -ygit --version git –version可以查看安装的git版本12[git@hadoop3 gitrepo]$ git --versiongit version 1.8.3.1 系统是centos7，自带git版本太低，但可以使用。 添加git用户组和用户12groupadd gituseradd git -g git 创建登录证书1234su gitcdmkdir .ssh &amp;&amp; chmod 700 .sshtouch .ssh/authorized_keys &amp;&amp; chmod 600 .ssh/authorized_keys 这里注意，一定要设置authorized_keys文件的权限为600，权限太大或太小都会造成cannot access的问题，我就遇到过这个坑。 免秘钥复制客户端的公钥到服务端的authorized_keys文件中 初始化git仓库创建一个git仓库文件夹，专门存放项目的地方，并创建一个项目，初始化：12345mkdir /srv/git -pcd /srv/gitmkdir project.gitcd project.gitgit init --bare bare的意思就是初始化一个裸仓库，并不存储用户push的数据，只存储元数据。 提交项目到git server下面的命令是在客户端（另一台机器，可以是windows，也可以是linux）上执行的：12345678cd myprojectgit initgit config --global user.email “chenzuoli709@163.com”git config --global user.name “chenzuoli”git add .git commit -m “initial commit”git remote add origin git@gitserver:/srv/git/project.gitgit push origin master 注意：提交的时候需要将gitserver更换成自己的git服务器的ip或者映射域名。 克隆项目1git clone git@gitserver:/srv/git/project.git 也是要替换gitserver的。 方法二：自定义安装下载最新稳定版gitgit最新版下载 添加git用户组和用户12groupadd gituseradd git -g git 上传解压1234su gitcd $GIT_HOMExz -d git-2.9.5.tar.xztar xvf git-2.9.5.tar 环境准备1yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-devel gcc -y 预编译、编译、安装123cd git-2.9.5./configure -prefix=$GIT_HOMEmake &amp;&amp; make install 其中GIT_HOME是自己指定的git安装目录。 配置配置跟方法一一样 添加链接上述步骤配置完成后，我们在push clone时会出现如下问题：12345678bash: git-receive-pack: command not foundfatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists.bash: git-upload-pack: command not foundfatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists. 原因是自定义安装时git的执行文件不在/usr/bin下，添加链接即可：12345ln -s /usr/local/gitserver/install/bin/git /usr/bin/gitln -s /usr/local/gitserver/install/bin/git-shell /usr/bin/git-shellln -s /usr/local/gitserver/install/bin/git-upload-archive /usr/bin/git-upload-archiveln -s /usr/local/gitserver/install/bin/git-upload-pack /usr/bin/git-upload-packln -s /usr/local/gitserver/install/bin/git-receive-pack /usr/bin/git-receive-pack 到这里配置就基本完成了，谢谢大家，如果有什么问题，请留言。]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[ambari管理监控hadoop生态系统的环境安装及问题解答]]></title>
-    <url>%2F2018%2F03%2F10%2Fambari%E7%AE%A1%E7%90%86%E7%9B%91%E6%8E%A7hadoop%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E5%8F%8A%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94%2F</url>
-    <content type="text"><![CDATA[首先来介绍下ambari，它是一个apache的一个顶级项目，hadoop生态组件的监控、管理工具，相比较于cloudera公司的CDH，它的特点是完全开源，一键部署安装、管理、监控大数据各组件，省时省力，下面就来介绍ambari环境是如何安装的。本安装教程适用于操作系统centos7，在某一台服务器上安装，原理就是虚拟化该服务器成多个virtual box，然后启动ambari服务，管理这些虚拟机。 安装安装步骤可以参考官网：ambari.apache.org 环境准备1yum install lrzsz openssl openssh-clients git maven -y 下载安装VirtualBox、VagrantVirtualBox选择最新稳定版.rpm文件下载即可上传到服务器使用yum安装 下载ambari-vagrant123git clone https://github.com/u39kun/ambari-vagrant.gitcat ambari-vagrant/append-to-etc-hosts.txt &gt;&gt; /etc/hosts --配置ip、域名映射vagrant --生成密钥 启动VMs1cd ambari-vagrant 你可以看到在该文件夹下有许多centos的版本，官方说centos6.8对ambari的兼容性最好，我们就用centos6.8吧。123cd centos6.8cp ~/.vagrant.d/insecure_private_key . --将密钥复制到当前文件夹，注意不要少了组后面的一个点，代表当前文件夹./up.sh 3 --启动3个virtual machine 正常的话，就启动了c6801 c6802 c6803这三台虚拟机 登录VMs12vagrant ssh c6801su - ssh没问题的话，说明安装是没问题的，下面来安装ambari-server，以root用户完成下面的操作。 安装ambari-server下载ambari的源，安装并启动ambari-server1234wget -O /etc/yum.repos.d/ambari.repo http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.5.1.0/ambari.repoyum install ambari-server -yambari-server setup -sambari-server start 启动成功后，我们可以访问ambari的web界面： http://c6801.ambari.apache.org:8080，初始的登录用户名和密码均为admin，以同样的方式可以访问c6802 c6803，然后我们就可以对着三台虚拟机进行安装hadoop生态的各个组件了。 问题安装过程中会出现各种问题，具体问题及解决方案如下： 启动虚拟盒的时候报错运行命令：1./up.sh 3 错误日志如下：1234There was an error while excuting &apos;VBoxMange&apos;, a CLI used by vagrant for controlling VirtualBox, The command and stderr is shown below.Command: [&quot;startvm&quot;, &quot;afb1736b-3bab-4d1a-a968-16aba764195a&quot;, &quot;--type&quot;, &quot;gui&quot;]Stderr: VBoxManage: error: The virtual machine &quot;centos68-c6801-1520048454672_80399&quot; has terminated upexpectedly during startup because of singal 6.VBoxManage: error: Details: code NS_ERROR_FAILURE (0x80004005), componnent MachineWrap, interface IMachine. 错误原因：linux系统中的kernel module与ambari需要使用的kernel模块版本不匹配，导致vboxdrv服务启动异常，可以使用命令查看vboxdrv服务的启动情况：1systemctl status vboxdrv 解决办法：1.安装更新kernel1yum install kernel -y 2.安装kernel-devel1yum install kernel -y 3.重启服务器1reboot 4.启动vboxdrv服务12systemctl start vboxdrvsystemctl status vboxdrv --查看状态 到这里配置就基本完成了，谢谢大家，如果有什么问题，请留言。]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>ambari</tag>
-        <tag>hadoop</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[windows下gvim打开文件中文乱码]]></title>
-    <url>%2F2018%2F02%2F08%2Fwindows%E4%B8%8Bvim%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%2F</url>
-    <content type="text"><![CDATA[习惯了linux操作命令，突然有需要使用到windows cmd命令，例如安装某些软件时，需要用命令方式去安装：1npm install hexo-cli 安装完成后，需要编辑一些配置文件，这个时候，去’计算机’中重新定位到该配置文件的位置时，是很不方便的，如果有个类似vim的工具多好，windows自带的文本编辑工具notepad打开后还不能像vim一样操作，很是不适，不过总有神一般的人物开发出好用的工具。windows下有类似linux下的vim工具gvim，但是gvim打开某些文件时，中文乱码，很是让人烦恼，下面就来介绍如何解决乱码的问题。windows下默认vim打开是gbk格式的，所以中文乱码，需要进行设置vim打开时加载文件时的编码，参照如下设置： 打开gvim客户端 编辑_vimrc配置文件方式一： 方式二：直接编辑文件%VIM_HOME%_vimrc添加如下配置：12set enc=utf8 设置打开文件缓冲区编码set fencs=utf8,gbk,gb2312,gb18030,cp936 设置文件编码 设置后，再次打开ok。如果gvim菜单栏中文乱码编辑配置文件_vimrc，添加如下配置：12source $VIMRUNTIME/delmenu.vim 设置gvim菜单文件编码source $VIMRUNTIME/menu.vim 设置gvim菜单文件编码]]></content>
-      <categories>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>windows</tag>
-        <tag>gvim</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[ubuntu防火墙操作]]></title>
-    <url>%2F2018%2F02%2F07%2Fubuntu%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C%2F</url>
-    <content type="text"><![CDATA[使用过了centos的同胞们，听说ubuntu的交互性很不错，可视化界面也很炫酷，果断更换ubuntu系统，但是安装完成之后，感觉都不会使用linux系统了，于是各种google查询操作方法，下面来简单介绍ubuntu防火墙的操作。使用ubuntu系统，配置防火墙稍微跟centos不太一样，有一样工具，叫做ufw，即uncomplicated firewall简单防火墙，刚开始用的时候不太习惯，记住这两个单词就行。ubuntu系统自带就有这个工具，可能版本的原因，你的ubuntu可能没有，不用担心，没有先来安装。 安装ufw工具1sudo apt install ufw -y 如果报错找不到包：1234Reading package lists... DoneBuilding dependency tree Reading state information... DoneE: Unable to locate package ufw 更新一下依赖库就行：1sudo apt-get update 然后继续安装ufw，安装完成后，我们来启动它1sudo ufw enable 此时防火墙就开启了，默认可以访问部分端口，不如22、443，想关闭所有外部ip对本机的端口访问的话，执行命令：1sudo ufw default deny 查看防火墙状态1sudo ufw status 启用或者禁用端口、服务允许外部访问端口12sudo ufw allow 22sudo ufw allow sshd 禁止外部访问端口12sudo ufw delete allow 80sudo ufw delete allow apache2 允许某个ip访问本机所有端口1sudo ufw allow from 192.168.1.1 OK，希望对大家有帮助，我们一起进步，有问题欢迎在下方留言，或者给我发邮件，邮件地址：chenzuoli709@gmail.com。]]></content>
-      <categories>
-        <category>ubuntu</category>
-      </categories>
-      <tags>
-        <tag>ubuntu</tag>
-        <tag>防火墙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[c3p0数据库连接池的使用方法]]></title>
-    <url>%2F2018%2F02%2F03%2Fc3p0%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[c3p0数据库连接池，一个jdbc连接池，封装了增删改查的各种方法，并为我们自动优化了数据库连接，提高程序的运行效率。需要添加的依赖：123456789101112&lt;!-- https://mvnrepository.com/artifact/c3p0/c3p0 --&gt;&lt;dependency&gt; &lt;groupId&gt;c3p0&lt;/groupId&gt; &lt;artifactId&gt;c3p0&lt;/artifactId&gt; &lt;version&gt;0.9.1.2&lt;/version&gt;&lt;/dependency&gt;&lt;!-- https://mvnrepository.com/artifact/com.mchange/c3p0 --&gt;&lt;dependency&gt; &lt;groupId&gt;com.mchange&lt;/groupId&gt; &lt;artifactId&gt;c3p0&lt;/artifactId&gt; &lt;version&gt;0.9.5.2&lt;/version&gt;&lt;/dependency&gt; 项目src/resources下需要配置文件c3p0.properties1234567891011c3p0.JDBC.url=jdbc:mysql://localhost:3306/ms_cms?characterEncoding=utf8 --jdbc连接urlc3p0.DriverClass=com.mysql.jdbc.Driver --数据库驱动c3p0.user=root --用户名c3p0.pwd=xxx --密码c3p0.acquireIncrement=3 --当连接池中的连接耗尽时，一次性获取的连接数c3p0.idleConnectionTestPeriod=60 --检查连接池中的空闲连接c3p0.initialPoolSize=10 --初始化连接数c3p0.maxIdleTime=60 --最大空闲时间c3p0.maxPoolSize=20 --连接池最大连接数c3p0.maxStatements=100 --最大会话数c3p0.minPoolSize=5 --连接池最小连接数 java代码使用方法：1234567891011121314151617181920212223242526272829public Connection dd() throws FileNotFoundException, IOException, PropertyVetoException, SQLException&#123; Properties pr = new Properties(); String c3p0Properties = this.getClass().getClassLoader().getResource(&quot;c3p0.properties&quot;).getPath(); //获得src下的c3p0.properties的路径 c3p0Properties = URLDecoder.decode(c3p0Properties, &quot;utf-8&quot;); //路径的编码是UTF-8 java.io.File c3p0File = new java.io.File(c3p0Properties); //得到文件c3p0.properties文件 pr.load(new FileInputStream(c3p0File)); //读取c3p0文件的内容 // pr.save(new FileOutputStream(c3p0File), null); ComboPooledDataSource cpds = new ComboPooledDataSource(); //使用c3p0操作数据库 cpds.setDriverClass(pr.getProperty(&quot;c3p0DriverClass&quot;)); //加载数据驱动 cpds.setJdbcUrl(pr.getProperty(&quot;c3p0.JDBC.url&quot;)); //连接特定的数据库 cpds.setUser(pr.getProperty(&quot;c3p0.user&quot;)); //数据库用户名 cpds.setPassword(pr.getProperty(&quot;c3p0.pwd&quot;)); //数据库用户密码 Connection conn = cpds.getConnection(); //获得连接 return conn; &#125;]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-        <tag>c3p0</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Windows远程连接linux图形界面配置详解]]></title>
-    <url>%2F2017%2F12%2F28%2FWindows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5linux%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3%2F</url>
-    <content type="text"><![CDATA[Windows远程连接linux图形界面，利用VNC服务实现windows远程连接linux图形化界面，linux作为VNC Server，windows作为VNC Viewer。原理很简单，在vnc server端生成一个桌面号，在vnc client端去连接该桌面号即可。其中很神奇的地方在于，如果两个人同时连接上一个桌面号的话，一个人可以看到另一个人的操作。安装步骤 mini版centos安装图形化界面如果已经安装了图形化界面，则此步骤可以省略。 安装X window1yum groupinstall &quot;X Window System&quot; 安装GNOME Desktop1yum groupinstall &quot;GNOME Desktop&quot; 如果是centos7以前的版本，则安装命令为1yum groupinstall &quot;Desktop&quot; 如果找不到Desktop，那么试试：1yum grouplist 查看可以安装的group，可能不同的版本group组的名字不同。 启动gnome1startx 切换到图形化界面 linux安装VNC Server安装1yum install vnc-server –y 配置12cp /lib/systemd/system/vncserver@.service /etc/systemd/system/cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service 编辑vim /etc/systemd/system/vncserver@:1.service将更换为root 设置开机自启动1systemctl enable vncserver@:1.service 添加防火墙信任规则12firewall-cmd --permanent --add-service vnc-serverfirewall-cmd –reload 重启服务器reboot启动vnc服务启动方式：1vncserver :桌面号 注意：中间需留有空格，桌面号用数字表示，表示每个用户占用一个桌面连接。以上命令执行的过程中，因为是第一次执行，需要输入密码，密码被加密/root/.vnc/passwd中；同时在用户主目录下的.vnc子目录中为用户自动建立xstartup配置文件（/root/.vnc/xstartup），在每次启动VND服务时，都会读取该文件中的配置信息。 VNC服务使用的端口号与桌面号的关系 windows安装VNC Viewer安装测试输入ip:桌面号连接 其他修改vnc密码1vncpasswd 关闭vnc服务1vncserver -kill :1 防火墙添加信任12firewall-cmd --permanent --add-service vnc-serverfirewall-cmd --reload]]></content>
-      <categories>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>windows</tag>
-        <tag>linux</tag>
-        <tag>vnc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[搭建maven私服nexus]]></title>
-    <url>%2F2017%2F12%2F26%2F%E6%90%AD%E5%BB%BAmaven%E7%A7%81%E6%9C%8Dnexus%2F</url>
-    <content type="text"><![CDATA[maven私服搭建，目的就是我们在使用maven打包时，如果私服中有相对应的包时，可以直接拉取过来，而不需要去下载，仅仅第一次使用该包时才会下载，这样会减少很多的时间，提高效率。 安装配置nexus下载：nexus下载解压：1$ tar zxvf nexus-3.6.1-02-unix.tar.gz nexus详解文档参考 修改启动用户1$ vim $NEXUS_HOME/bin/nexus.rc 修改默认端口1$ vim $NEXUS_HOME/ etc/nexus-default.properties 启动1$ ./bin/nexus run 访问浏览器访问8081端口，默认登陆：user: adminpassword: admin123 配置maven-central：maven中央库，默认从https://repo1.maven.org/maven2上拉取jar包；maven-releases：私库发行版jar，初次安装nexus请将Deployment policy设置成Allow redeploy；maven-snapshots：私库快照调试版本jar；maven-public：仓库分组，把上面三个仓库组合起来一起对外提供服务，在本地maven配置settings.xml中使用。 本地maven使用私服nexusmaven默认配置settings.xml1234567891011121314151617181920212223242526272829303132333435363738394041&lt;servers&gt; &lt;server&gt; &lt;id&gt;releases&lt;/id&gt; &lt;username&gt;admin&lt;/username&gt; &lt;password&gt;admin123&lt;/password&gt; &lt;/server&gt; &lt;server&gt; &lt;id&gt;snapshots&lt;/id&gt; &lt;username&gt;admin&lt;/username&gt; &lt;password&gt;admin123&lt;/password&gt; &lt;/server&gt;&lt;/servers&gt;&lt;mirrors&gt; &lt;mirror&gt; &lt;id&gt;nexus&lt;/id&gt; &lt;mirrorOf&gt;*&lt;/mirrorOf&gt; &lt;url&gt;http://123.207.66.156:8081/repository/maven-public/&lt;/url&gt; &lt;/mirror&gt;&lt;/mirrors&gt;&lt;profiles&gt; &lt;profile&gt; &lt;id&gt;dev&lt;/id&gt; &lt;repositories&gt; &lt;repository&gt; &lt;id&gt;Nexus&lt;/id&gt; &lt;url&gt;http://123.207.66.156:8081/repository/maven-public/&lt;/url&gt; &lt;releases&gt; &lt;enabled&gt;true&lt;/enabled&gt; &lt;/releases&gt; &lt;snapshots&gt; &lt;enabled&gt;true&lt;/enabled&gt; &lt;/snapshots&gt; &lt;/repository&gt; &lt;/repositories&gt; &lt;/profile&gt;&lt;/profiles&gt;&lt;activeProfiles&gt; &lt;activeProfile&gt;dev&lt;/activeProfile&gt;&lt;/activeProfiles&gt; 修改工程pom.xml123456789101112&lt;distributionManagement&gt; &lt;repository&gt; &lt;id&gt;releases&lt;/id&gt; &lt;name&gt;Releases&lt;/name&gt; &lt;url&gt;http://123.207.66.156:8081/repository/maven-releases/&lt;/url&gt; &lt;/repository&gt; &lt;snapshotRepository&gt; &lt;id&gt;snapshots&lt;/id&gt; &lt;name&gt;Snapshot&lt;/name&gt; &lt;url&gt;http://123.207.66.156:8081/repository/maven-snapshots/&lt;/url&gt; &lt;/snapshotRepository&gt;&lt;/distributionManagement&gt; 注意上面的repository的id值一定要跟settings.xml文件中配置的server一致。]]></content>
-      <categories>
-        <category>maven</category>
-      </categories>
-      <tags>
-        <tag>maven</tag>
-        <tag>nexus</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[spark基于zookeeper的高可用搭建]]></title>
-    <url>%2F2017%2F12%2F26%2Fspark%E5%9F%BA%E4%BA%8Ezookeeper%E7%9A%84%E9%AB%98%E5%8F%AF%E7%94%A8%E6%90%AD%E5%BB%BA%2F</url>
-    <content type="text"><![CDATA[spark提供服务时，master的角色非常的重要，它负责任务分发、任务调度，可谓任重道远啊，所以我们要对master做高可用，基于zookeeper的高可用，可以自动实现master挂掉后备用的master启动，堆外提供服务。 节点分布：zookeeper: node1 node2 node3spark: node1 node2 node3 node4 编辑SPARK_HOME/conf/spark-env.sh注释掉HADOOP_CONF_DIR，添加SPARK_DAEMON_JAVA_OPTS，其他配置不变。1export SPARK_DAEMON_JAVA_OPTS=&quot;-Dspark.deploy.recoveryMode=ZOOKEEPER -Dspark.deploy.zookeeper.url=node1:2181,node2:2181,node3:2181 -Dspark.deploy.zookeeper.dir=/spark20170302&quot; 同步该配置文件spark-env.sh到其他节点scp spark-env.sh root@node2:$SPARK_HOME/confscp spark-env.sh root@node3:$SPARK_HOME/confscp spark-env.sh root@node4:$SPARK_HOME/conf 在node2节点上编辑spark-env.sh，将SPARK_MASTER_HOST修改为node21SPARK_MASTER_HOST=node2 启动spark服务在node1节点上启动spark集群1$ ./sbin/start-all.sh 启动另一个master在node2节点上只启动master1$ ./sbin/start-master.sh 访问webUI查看启动情况如果配置正确，启动正常，那么master会有两个（node1， node2），一个为ACTIVE状态，一个为STANDBY状态。]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>spark</tag>
-        <tag>zookeeper</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[单台服务器安装spark、hadoop服务文档]]></title>
-    <url>%2F2017%2F12%2F26%2F%E5%8D%95%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85spark%E3%80%81hadoop%E6%9C%8D%E5%8A%A1%E6%96%87%E6%A1%A3%2F</url>
-    <content type="text"><![CDATA[spark作为分布式计算引擎，如果内存足够，是需要很少的磁盘空间的，在shuffle可能用到，在reduce阶段一定会用到，它是基于hdfs作为存储介质的，所以在使用spark时，应该搭建一个hdfs。 安装JDK1.8安装并配置环境变量，步骤略。 安装scala2.11.8安装并配置环境变量，步骤略。 hadoop伪分布式搭建关闭防火墙配置本机对本机免秘钥登录ssh-keygen -t rsa -P ‘’ -f ~/.ssh/id_rsassh-copy-id ip其中ip为本机ipSsh ip首次本机ssh本机需要输入密码或者yes，输入即可，第二次或者以后就不需要输入参数了。 下载hadoop-2.7.4.tar.gz包解压修改配置文件HADOOP_HOME/etc/hadoop下Hadoop.env.sh修改JAVA_HOME为jdk路径； Core-site.xmlFs.defaltFS属性修改为namenode的ipHadoop.tmp.dir修改为自定义目录，并创建好该目录123456789101112&lt;property&gt; &lt;name&gt;fs.defaultFS&lt;/name&gt; &lt;value&gt;hdfs://192.168.109.235:9000&lt;/value&gt;&lt;/property&gt;&lt;property&gt; &lt;name&gt;hadoop.tmp.dir&lt;/name&gt; &lt;value&gt;/root/chen/hadoop/data/temp&lt;/value&gt;&lt;/property&gt;&lt;property&gt; &lt;name&gt;fs.trash.interval&lt;/name&gt; &lt;value&gt;1440&lt;/value&gt;&lt;/property&gt; Hdfs-site.xml使用默认值即可12345678&lt;property&gt; &lt;name&gt;dfs.replication&lt;/name&gt; &lt;value&gt;2&lt;/value&gt;&lt;/property&gt;&lt;property&gt; &lt;name&gt;dfs.permissions&lt;/name&gt; &lt;value&gt;false&lt;/value&gt;&lt;/property&gt; Mapred-env.sh修改JAVA_HOME为jdk路径，其他默认。 Mapred-site.xml1234&lt;property&gt; &lt;name&gt;mapreduce.framework.name&lt;/name&gt; &lt;value&gt;yarn&lt;/value&gt;&lt;/property&gt; yarn-env.sh修改JAVA_HOME为java安装路径 yarn-site.xml123456789101112131415161718yarn.resourcemanager.hostname属性指定为namenode的ip地址。&lt;property&gt; &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt; &lt;value&gt;mapreduce_shuffle&lt;/value&gt;&lt;/property&gt;&lt;property&gt; &lt;name&gt;yarn.log-aggregation-enable&lt;/name&gt; &lt;value&gt;true&lt;/value&gt;&lt;/property&gt;&lt;property&gt; &lt;description&gt;The hostname of the RM.&lt;/description&gt; &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt; &lt;value&gt;192.168.109.235&lt;/value&gt;&lt;/property&gt;&lt;property&gt; &lt;name&gt;yarn.nodemanager.resource.memory-mb&lt;/name&gt; &lt;value&gt;2048&lt;/value&gt;&lt;/property&gt; 添加slaves文件在HADOOP_HOME/etc/hadoop文件夹下添加slaves文件，指定datanode节点添加localhost即可。 格式化namenode./bin/hdfs namenode –format 启动hdfs./sbin/start-all.sh jps查看节点服务的启动情况如果启动正常，那么应该有NamenodeSecondaryNamenodeResourcemanagerNodemanagerDataNode这5个角色 Web Ui访问：http://ip:50070Spark搭建下载并解压spark-2.1.0-bin-hadoop2.7.tgz修改配置文件cp slaves.template slavescp spark-env.sh.template spark-env.shcp spark-defaults.conf.template spark-defaults.confvi spark-env.sh增加参数123456789SPARK_MASTER_HOST=修改为ipSPARK_MASTER_PORT=7077SPARK_WORKER_CORES=2SPARK_WORKER_MEMORY=4gSPARK_WORKER_INSTANCES=3HADOOP_CONF_DIR=/chen/hadoop2.7/hadoop-2.7.4/etc/hadoop修改为hadoop配置文件的位置SPARK_DRIVER_MEMORY=1024MJAVA_HOME=/chen/jdk8/jdk1.8.0_144修改为jdk的路径MAVEN_OPTS=&quot;-Xms1024m -Xmx4096m -XX:PermSize=1024m&quot; vi spark-deafults.conf其中需要修改hdfs的ip地址，并创建路径/user/spark/logs 启动spark./sbin/start-all.sh正常启动的话应该有：1个Master3个Worker两个角色Web Ui访问http://ip:8080]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>spark</tag>
-        <tag>hadoop</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[linux高效编程]]></title>
-    <url>%2F2017%2F12%2F25%2Flinux%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B%2F</url>
-    <content type="text"><![CDATA[本文将介绍linux命令行经常使用到的一些快捷键、编辑命令，还有强大的vim编辑器，能让你在linux上编程更高效。作为一个程序员，会使用各种快捷键不也是更炫酷的一件事吗？ linux命令行光标移动1234567891011121314151617181920212223ctrl+a --- 把光标移到行首（ahead）ctrl+e --- 把光标移到行尾（end）ctrl+l --- 清除终端（clear）ctrl+u --- 删除当前字符到行首（带有剪切功能）ctrl+k --- 删除当前字符到行尾（带有剪切功能）ctrl+y --- 粘贴ctrl+f --- 向前移动一个字符（forward）ctrl+b --- 向后移动一个字符（back）ctrl+左右箭头 --- 把光标在单词之间左右移动ctrl+w --- 删除光标前面的单词cd ~ --- 进入home目录cd - --- 返回上一目录mkdir -p path/to/filealias cd3=”cd ../../../”rename ‘.java’ ‘.java.bak’ *.java --- 批量备份文件ctrl+r --- 查询历史命令history --- 历史命令执行历史命令方法 --- ！+ 命令序号ctrl+p --- 上一条命令（或者上下箭头） 查找进程12345678910进程 进程号 所占用端口号ps -ef显示所有进程信息，包括命令行，与grep配合使用，查找特定进程显示环境变量ps -aux显示所有进程信息，包括资源占用情况，与grep配合使用netstat -anp显示协议、端口、进程号、进程名称等信息 Vimvim与vi的区别：增加了新特性：语法高亮、可视化操作、多平台支持（windows、mac、terminal） 正常模式：浏览和修改文本内容1234567891011121314151617181920R --- 替换（覆盖）当前光标位置及后面的若干文本J --- 合并当前行及下一行为一行j --- 下k --- 上h --- 左l --- 右H --- 当前屏幕第一行M --- 当前屏幕中间行L --- 当前屏幕最后一行w --- 当前光标移至下一个单词词首b --- 当前光标移至上一个单词词首e --- 下一个单词词尾$ --- 当前光标移至行尾^ --- 当前光标移至行首u --- 撤销ctrl+r --- 恢复上一步被撤销的动作 复制123456yy --- 复制当前行5yy --- 复制当前行和后4行yw --- 当前字符到下一单词的起始位置y$ --- 当前字符到当前行末尾y0/y^ --- 当前字符到当前行行首yngg/ynG --- 复制当前行到文件第n行 粘贴1p 删除1234567dw --- 删除当前光标至单词末尾ndw --- 删除当前光标后的n个字符dd --- 删除当前行d$ --- 删除光标位置至行尾d^ --- 删除光标位置至行首dgg --- 删除首行至当前行dG --- 删除当前行至末行 编辑模式 — 编辑文本从正常模式进入编辑模式123456a --- 在当前光标位置的右边添加文本A --- 在当前行的末尾位置添加文本i --- 在当前光标位置的左边添加文本I --- 在当前行的开始处添加文本(非空字符的行首)O --- 在当前行的上面新建一行o --- 在当前行的下面新建一行 可视模式：高亮选取文本后的正常模式1234v+hjkl --- 选中文本后y复制d剪切，p粘贴ctrl+v --- 以块为选取单位V --- 以行为选取单位行、块为选取单位的模式可以随意切换 命令行模式：操作文本文件123456w --- 保存wq --- 保存并退出q --- 退出q! --- 不保存退出/ --- 查询，n下一个匹配字符串，N上一个匹配字符串:set number --- 设置行号]]></content>
-      <categories>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>programming</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[以Hexo网页制作模板构建Github Pages个人网站]]></title>
-    <url>%2F2017%2F12%2F19%2FcreateWebsiteHelp%2F</url>
-    <content type="text"><![CDATA[个人网站制作过程，以Hexo为例，为大家讲解如何制作，如果有什么错误的地方，欢迎指正，如果有什么不懂的地方，可以email我：chenzuoli709@gmail.com。具体请看详细内容 —&gt; 1.准备环境Node.jsGit 2.安装Hexo1$ npm install -g hexo-cli 3.创建github pagesGithub官网项目名称为.github.io 4.配置Hexo123$ hexo init &lt;folder&gt;$ cd &lt;folder&gt;$ npm install 初始化完成后，该目录下的文件结构如下：1234567_config.yml --- 全局配置文件package.jsonscaffolds --- 模板source --- 文件仓库 _drafts --- 草稿 _posts --- 发布过的文件themes --- 主题 编辑_config.yml：指定项目部署的方式为git，上传到远程仓库repo的master分支上1234deploy: type: git repo: https://github.com/chenzuoli/chenzuoli.github.io.git branch: master 5.部署12hexo generate --- 生成hexo deploy --- 部署到github 6.域名映射第一步：登录你购买域名服务商提供给你的域名管理中心，我购买的是腾讯云，域名为chenzuoli.com，首先绑定主域名映射到github.com所对应的ip地址，绑定完成后，隔几分钟测试，因为DNS解析先从你的域名提供商开始，然后到其他的域名提供商，再到国外：1ping chenzuoli.com 看是否能够ping通，如果ping通，说明域名映射已经ok了第二步：登录github到.github.io项目，进入settings选项，设置自定义域名chenzuoli.com，save后，可以看到在该项目下会自动生成一个CNAME的文件，文件内容就是你设置的域名chenzuoli.com。稍等几分钟，就可以访问chenzuoli.com了。这里说明一下域名映射的流程：chenzuoli.com -&gt; github.com -&gt; chenzuoli.github.iochenzuoli.com映射到github.com，然后github.com会解析该请求寻找CNAME为chenzuoli.com的项目，然后就找到了chenzuoli.github.io，于是就可以访问了。大家赶紧试试吧。]]></content>
-      <tags>
-        <tag>hexo</tag>
-        <tag>github pages</tag>
-        <tag>blog</tag>
-      </tags>
-  </entry>
+    <entry>
+        <title><![CDATA[Git服务器端配置详解]]></title>
+        <url>%2F2018%2F03%2F10%2FGit%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3%2F</url>
+        <content type="text">
+            <![CDATA[我们在公司中，一个项目在开发过程中必定要涉及到同事之间的协同作战，此时代码管理就必不可少了，程序员用的最多的就是git了吧，但是公司的代码是禁止上传到github上的，所以需要自己搭建一个内部的git server服务器供公司内部使用，下面来具体就介绍。本安装教程适用于centos服务器，其他版本linux服务器步骤一样，运行命令会不相同，自己转换即可。配置git server，原理就是将客户端的公钥id_rsa.pub添加到服务端的密钥文件authorized_keys中，多个用户另起一行拼接到该文件中即可。下面介绍安装的两种方法： 方法一：yum安装安装git软件12yum install git -ygit --version git –version可以查看安装的git版本12[git@hadoop3 gitrepo]$ git --versiongit version 1.8.3.1 系统是centos7，自带git版本太低，但可以使用。 添加git用户组和用户12groupadd gituseradd git -g git 创建登录证书1234su gitcdmkdir .ssh &amp;&amp; chmod 700 .sshtouch .ssh/authorized_keys &amp;&amp; chmod 600 .ssh/authorized_keys 这里注意，一定要设置authorized_keys文件的权限为600，权限太大或太小都会造成cannot access的问题，我就遇到过这个坑。 免秘钥复制客户端的公钥到服务端的authorized_keys文件中 初始化git仓库创建一个git仓库文件夹，专门存放项目的地方，并创建一个项目，初始化：12345mkdir /srv/git -pcd /srv/gitmkdir project.gitcd project.gitgit init --bare bare的意思就是初始化一个裸仓库，并不存储用户push的数据，只存储元数据。 提交项目到git server下面的命令是在客户端（另一台机器，可以是windows，也可以是linux）上执行的：12345678cd myprojectgit initgit config --global user.email “chenzuoli709@163.com”git config --global user.name “chenzuoli”git add .git commit -m “initial commit”git remote add origin git@gitserver:/srv/git/project.gitgit push origin master 注意：提交的时候需要将gitserver更换成自己的git服务器的ip或者映射域名。 克隆项目1git clone git@gitserver:/srv/git/project.git 也是要替换gitserver的。 方法二：自定义安装下载最新稳定版gitgit最新版下载 添加git用户组和用户12groupadd gituseradd git -g git 上传解压1234su gitcd $GIT_HOMExz -d git-2.9.5.tar.xztar xvf git-2.9.5.tar 环境准备1yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-devel gcc -y 预编译、编译、安装123cd git-2.9.5./configure -prefix=$GIT_HOMEmake &amp;&amp; make install 其中GIT_HOME是自己指定的git安装目录。 配置配置跟方法一一样 添加链接上述步骤配置完成后，我们在push clone时会出现如下问题：12345678bash: git-receive-pack: command not foundfatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists.bash: git-upload-pack: command not foundfatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists. 原因是自定义安装时git的执行文件不在/usr/bin下，添加链接即可：12345ln -s /usr/local/gitserver/install/bin/git /usr/bin/gitln -s /usr/local/gitserver/install/bin/git-shell /usr/bin/git-shellln -s /usr/local/gitserver/install/bin/git-upload-archive /usr/bin/git-upload-archiveln -s /usr/local/gitserver/install/bin/git-upload-pack /usr/bin/git-upload-packln -s /usr/local/gitserver/install/bin/git-receive-pack /usr/bin/git-receive-pack 到这里配置就基本完成了，谢谢大家，如果有什么问题，请留言。]]></content>
+        <categories>
+            <category>git</category>
+        </categories>
+        <tags>
+            <tag>git</tag>
+        </tags>
+    </entry>
+    <entry>
+        <title><![CDATA[ambari管理监控hadoop生态系统的环境安装及问题解答]]></title>
+        <url>
+            %2F2018%2F03%2F10%2Fambari%E7%AE%A1%E7%90%86%E7%9B%91%E6%8E%A7hadoop%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E5%8F%8A%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94%2F
+        </url>
+        <content type="text">
+            <![CDATA[首先来介绍下ambari，它是一个apache的一个顶级项目，hadoop生态组件的监控、管理工具，相比较于cloudera公司的CDH，它的特点是完全开源，一键部署安装、管理、监控大数据各组件，省时省力，下面就来介绍ambari环境是如何安装的。本安装教程适用于操作系统centos7，在某一台服务器上安装，原理就是虚拟化该服务器成多个virtual box，然后启动ambari服务，管理这些虚拟机。 安装安装步骤可以参考官网：ambari.apache.org 环境准备1yum install lrzsz openssl openssh-clients git maven -y 下载安装VirtualBox、VagrantVirtualBox选择最新稳定版.rpm文件下载即可上传到服务器使用yum安装 下载ambari-vagrant123git clone https://github.com/u39kun/ambari-vagrant.gitcat ambari-vagrant/append-to-etc-hosts.txt &gt;&gt; /etc/hosts --配置ip、域名映射vagrant --生成密钥 启动VMs1cd ambari-vagrant 你可以看到在该文件夹下有许多centos的版本，官方说centos6.8对ambari的兼容性最好，我们就用centos6.8吧。123cd centos6.8cp ~/.vagrant.d/insecure_private_key . --将密钥复制到当前文件夹，注意不要少了组后面的一个点，代表当前文件夹./up.sh 3 --启动3个virtual machine 正常的话，就启动了c6801 c6802 c6803这三台虚拟机 登录VMs12vagrant ssh c6801su - ssh没问题的话，说明安装是没问题的，下面来安装ambari-server，以root用户完成下面的操作。 安装ambari-server下载ambari的源，安装并启动ambari-server1234wget -O /etc/yum.repos.d/ambari.repo http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.5.1.0/ambari.repoyum install ambari-server -yambari-server setup -sambari-server start 启动成功后，我们可以访问ambari的web界面： http://c6801.ambari.apache.org:8080，初始的登录用户名和密码均为admin，以同样的方式可以访问c6802 c6803，然后我们就可以对着三台虚拟机进行安装hadoop生态的各个组件了。 问题安装过程中会出现各种问题，具体问题及解决方案如下： 启动虚拟盒的时候报错运行命令：1./up.sh 3 错误日志如下：1234There was an error while excuting &apos;VBoxMange&apos;, a CLI used by vagrant for controlling VirtualBox, The command and stderr is shown below.Command: [&quot;startvm&quot;, &quot;afb1736b-3bab-4d1a-a968-16aba764195a&quot;, &quot;--type&quot;, &quot;gui&quot;]Stderr: VBoxManage: error: The virtual machine &quot;centos68-c6801-1520048454672_80399&quot; has terminated upexpectedly during startup because of singal 6.VBoxManage: error: Details: code NS_ERROR_FAILURE (0x80004005), componnent MachineWrap, interface IMachine. 错误原因：linux系统中的kernel module与ambari需要使用的kernel模块版本不匹配，导致vboxdrv服务启动异常，可以使用命令查看vboxdrv服务的启动情况：1systemctl status vboxdrv 解决办法：1.安装更新kernel1yum install kernel -y 2.安装kernel-devel1yum install kernel -y 3.重启服务器1reboot 4.启动vboxdrv服务12systemctl start vboxdrvsystemctl status vboxdrv --查看状态 到这里配置就基本完成了，谢谢大家，如果有什么问题，请留言。]]></content>
+        <categories>
+            <category>环境安装</category>
+        </categories>
+        <tags>
+            <tag>ambari</tag>
+            <tag>hadoop</tag>
+        </tags>
+    </entry>
+    <entry>
+        <title><![CDATA[windows下gvim打开文件中文乱码]]></title>
+        <url>
+            %2F2018%2F02%2F08%2Fwindows%E4%B8%8Bvim%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%2F
+        </url>
+        <content type="text">
+            <![CDATA[习惯了linux操作命令，突然有需要使用到windows cmd命令，例如安装某些软件时，需要用命令方式去安装：1npm install hexo-cli 安装完成后，需要编辑一些配置文件，这个时候，去’计算机’中重新定位到该配置文件的位置时，是很不方便的，如果有个类似vim的工具多好，windows自带的文本编辑工具notepad打开后还不能像vim一样操作，很是不适，不过总有神一般的人物开发出好用的工具。windows下有类似linux下的vim工具gvim，但是gvim打开某些文件时，中文乱码，很是让人烦恼，下面就来介绍如何解决乱码的问题。windows下默认vim打开是gbk格式的，所以中文乱码，需要进行设置vim打开时加载文件时的编码，参照如下设置： 打开gvim客户端 编辑_vimrc配置文件方式一： 方式二：直接编辑文件%VIM_HOME%_vimrc添加如下配置：12set enc=utf8 设置打开文件缓冲区编码set fencs=utf8,gbk,gb2312,gb18030,cp936 设置文件编码 设置后，再次打开ok。如果gvim菜单栏中文乱码编辑配置文件_vimrc，添加如下配置：12source $VIMRUNTIME/delmenu.vim 设置gvim菜单文件编码source $VIMRUNTIME/menu.vim 设置gvim菜单文件编码]]></content>
+        <categories>
+            <category>操作系统</category>
+        </categories>
+        <tags>
+            <tag>windows</tag>
+            <tag>gvim</tag>
+        </tags>
+    </entry>
+    <entry>
+        <title><![CDATA[ubuntu防火墙操作]]></title>
+        <url>%2F2018%2F02%2F07%2Fubuntu%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C%2F</url>
+        <content type="text">
+            <![CDATA[使用过了centos的同胞们，听说ubuntu的交互性很不错，可视化界面也很炫酷，果断更换ubuntu系统，但是安装完成之后，感觉都不会使用linux系统了，于是各种google查询操作方法，下面来简单介绍ubuntu防火墙的操作。使用ubuntu系统，配置防火墙稍微跟centos不太一样，有一样工具，叫做ufw，即uncomplicated firewall简单防火墙，刚开始用的时候不太习惯，记住这两个单词就行。ubuntu系统自带就有这个工具，可能版本的原因，你的ubuntu可能没有，不用担心，没有先来安装。 安装ufw工具1sudo apt install ufw -y 如果报错找不到包：1234Reading package lists... DoneBuilding dependency tree Reading state information... DoneE: Unable to locate package ufw 更新一下依赖库就行：1sudo apt-get update 然后继续安装ufw，安装完成后，我们来启动它1sudo ufw enable 此时防火墙就开启了，默认可以访问部分端口，不如22、443，想关闭所有外部ip对本机的端口访问的话，执行命令：1sudo ufw default deny 查看防火墙状态1sudo ufw status 启用或者禁用端口、服务允许外部访问端口12sudo ufw allow 22sudo ufw allow sshd 禁止外部访问端口12sudo ufw delete allow 80sudo ufw delete allow apache2 允许某个ip访问本机所有端口1sudo ufw allow from 192.168.1.1 OK，希望对大家有帮助，我们一起进步，有问题欢迎在下方留言，或者给我发邮件，邮件地址：chenzuoli709@gmail.com。]]></content>
+        <categories>
+            <category>ubuntu</category>
+        </categories>
+        <tags>
+            <tag>ubuntu</tag>
+            <tag>防火墙</tag>
+        </tags>
+    </entry>
+    <entry>
+        <title><![CDATA[c3p0数据库连接池的使用方法]]></title>
+        <url>
+            %2F2018%2F02%2F03%2Fc3p0%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2F
+        </url>
+        <content type="text">
+            <![CDATA[c3p0数据库连接池，一个jdbc连接池，封装了增删改查的各种方法，并为我们自动优化了数据库连接，提高程序的运行效率。需要添加的依赖：123456789101112&lt;!-- https://mvnrepository.com/artifact/c3p0/c3p0 --&gt;&lt;dependency&gt; &lt;groupId&gt;c3p0&lt;/groupId&gt; &lt;artifactId&gt;c3p0&lt;/artifactId&gt; &lt;version&gt;0.9.1.2&lt;/version&gt;&lt;/dependency&gt;&lt;!-- https://mvnrepository.com/artifact/com.mchange/c3p0 --&gt;&lt;dependency&gt; &lt;groupId&gt;com.mchange&lt;/groupId&gt; &lt;artifactId&gt;c3p0&lt;/artifactId&gt; &lt;version&gt;0.9.5.2&lt;/version&gt;&lt;/dependency&gt; 项目src/resources下需要配置文件c3p0.properties1234567891011c3p0.JDBC.url=jdbc:mysql://localhost:3306/ms_cms?characterEncoding=utf8 --jdbc连接urlc3p0.DriverClass=com.mysql.jdbc.Driver --数据库驱动c3p0.user=root --用户名c3p0.pwd=xxx --密码c3p0.acquireIncrement=3 --当连接池中的连接耗尽时，一次性获取的连接数c3p0.idleConnectionTestPeriod=60 --检查连接池中的空闲连接c3p0.initialPoolSize=10 --初始化连接数c3p0.maxIdleTime=60 --最大空闲时间c3p0.maxPoolSize=20 --连接池最大连接数c3p0.maxStatements=100 --最大会话数c3p0.minPoolSize=5 --连接池最小连接数 java代码使用方法：1234567891011121314151617181920212223242526272829public Connection dd() throws FileNotFoundException, IOException, PropertyVetoException, SQLException&#123; Properties pr = new Properties(); String c3p0Properties = this.getClass().getClassLoader().getResource(&quot;c3p0.properties&quot;).getPath(); //获得src下的c3p0.properties的路径 c3p0Properties = URLDecoder.decode(c3p0Properties, &quot;utf-8&quot;); //路径的编码是UTF-8 java.io.File c3p0File = new java.io.File(c3p0Properties); //得到文件c3p0.properties文件 pr.load(new FileInputStream(c3p0File)); //读取c3p0文件的内容 // pr.save(new FileOutputStream(c3p0File), null); ComboPooledDataSource cpds = new ComboPooledDataSource(); //使用c3p0操作数据库 cpds.setDriverClass(pr.getProperty(&quot;c3p0DriverClass&quot;)); //加载数据驱动 cpds.setJdbcUrl(pr.getProperty(&quot;c3p0.JDBC.url&quot;)); //连接特定的数据库 cpds.setUser(pr.getProperty(&quot;c3p0.user&quot;)); //数据库用户名 cpds.setPassword(pr.getProperty(&quot;c3p0.pwd&quot;)); //数据库用户密码 Connection conn = cpds.getConnection(); //获得连接 return conn; &#125;]]></content>
+        <categories>
+            <category>数据库</category>
+        </categories>
+        <tags>
+            <tag>数据库</tag>
+            <tag>c3p0</tag>
+        </tags>
+    </entry>
+    <entry>
+        <title><![CDATA[Windows远程连接linux图形界面配置详解]]></title>
+        <url>
+            %2F2017%2F12%2F28%2FWindows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5linux%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3%2F
+        </url>
+        <content type="text">
+            <![CDATA[Windows远程连接linux图形界面，利用VNC服务实现windows远程连接linux图形化界面，linux作为VNC Server，windows作为VNC Viewer。原理很简单，在vnc server端生成一个桌面号，在vnc client端去连接该桌面号即可。其中很神奇的地方在于，如果两个人同时连接上一个桌面号的话，一个人可以看到另一个人的操作。安装步骤 mini版centos安装图形化界面如果已经安装了图形化界面，则此步骤可以省略。 安装X window1yum groupinstall &quot;X Window System&quot; 安装GNOME Desktop1yum groupinstall &quot;GNOME Desktop&quot; 如果是centos7以前的版本，则安装命令为1yum groupinstall &quot;Desktop&quot; 如果找不到Desktop，那么试试：1yum grouplist 查看可以安装的group，可能不同的版本group组的名字不同。 启动gnome1startx 切换到图形化界面 linux安装VNC Server安装1yum install vnc-server –y 配置12cp /lib/systemd/system/vncserver@.service /etc/systemd/system/cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service 编辑vim /etc/systemd/system/vncserver@:1.service将更换为root 设置开机自启动1systemctl enable vncserver@:1.service 添加防火墙信任规则12firewall-cmd --permanent --add-service vnc-serverfirewall-cmd –reload 重启服务器reboot启动vnc服务启动方式：1vncserver :桌面号 注意：中间需留有空格，桌面号用数字表示，表示每个用户占用一个桌面连接。以上命令执行的过程中，因为是第一次执行，需要输入密码，密码被加密/root/.vnc/passwd中；同时在用户主目录下的.vnc子目录中为用户自动建立xstartup配置文件（/root/.vnc/xstartup），在每次启动VND服务时，都会读取该文件中的配置信息。 VNC服务使用的端口号与桌面号的关系 windows安装VNC Viewer安装测试输入ip:桌面号连接 其他修改vnc密码1vncpasswd 关闭vnc服务1vncserver -kill :1 防火墙添加信任12firewall-cmd --permanent --add-service vnc-serverfirewall-cmd --reload]]></content>
+        <categories>
+            <category>操作系统</category>
+        </categories>
+        <tags>
+            <tag>windows</tag>
+            <tag>linux</tag>
+            <tag>vnc</tag>
+        </tags>
+    </entry>
+    <entry>
+        <title><![CDATA[搭建maven私服nexus]]></title>
+        <url>%2F2017%2F12%2F26%2F%E6%90%AD%E5%BB%BAmaven%E7%A7%81%E6%9C%8Dnexus%2F</url>
+        <content type="text">
+            <![CDATA[maven私服搭建，目的就是我们在使用maven打包时，如果私服中有相对应的包时，可以直接拉取过来，而不需要去下载，仅仅第一次使用该包时才会下载，这样会减少很多的时间，提高效率。 安装配置nexus下载：nexus下载解压：1$ tar zxvf nexus-3.6.1-02-unix.tar.gz nexus详解文档参考 修改启动用户1$ vim $NEXUS_HOME/bin/nexus.rc 修改默认端口1$ vim $NEXUS_HOME/ etc/nexus-default.properties 启动1$ ./bin/nexus run 访问浏览器访问8081端口，默认登陆：user: adminpassword: admin123 配置maven-central：maven中央库，默认从https://repo1.maven.org/maven2上拉取jar包；maven-releases：私库发行版jar，初次安装nexus请将Deployment policy设置成Allow redeploy；maven-snapshots：私库快照调试版本jar；maven-public：仓库分组，把上面三个仓库组合起来一起对外提供服务，在本地maven配置settings.xml中使用。 本地maven使用私服nexusmaven默认配置settings.xml1234567891011121314151617181920212223242526272829303132333435363738394041&lt;servers&gt; &lt;server&gt; &lt;id&gt;releases&lt;/id&gt; &lt;username&gt;admin&lt;/username&gt; &lt;password&gt;admin123&lt;/password&gt; &lt;/server&gt; &lt;server&gt; &lt;id&gt;snapshots&lt;/id&gt; &lt;username&gt;admin&lt;/username&gt; &lt;password&gt;admin123&lt;/password&gt; &lt;/server&gt;&lt;/servers&gt;&lt;mirrors&gt; &lt;mirror&gt; &lt;id&gt;nexus&lt;/id&gt; &lt;mirrorOf&gt;*&lt;/mirrorOf&gt; &lt;url&gt;http://123.207.66.156:8081/repository/maven-public/&lt;/url&gt; &lt;/mirror&gt;&lt;/mirrors&gt;&lt;profiles&gt; &lt;profile&gt; &lt;id&gt;dev&lt;/id&gt; &lt;repositories&gt; &lt;repository&gt; &lt;id&gt;Nexus&lt;/id&gt; &lt;url&gt;http://123.207.66.156:8081/repository/maven-public/&lt;/url&gt; &lt;releases&gt; &lt;enabled&gt;true&lt;/enabled&gt; &lt;/releases&gt; &lt;snapshots&gt; &lt;enabled&gt;true&lt;/enabled&gt; &lt;/snapshots&gt; &lt;/repository&gt; &lt;/repositories&gt; &lt;/profile&gt;&lt;/profiles&gt;&lt;activeProfiles&gt; &lt;activeProfile&gt;dev&lt;/activeProfile&gt;&lt;/activeProfiles&gt; 修改工程pom.xml123456789101112&lt;distributionManagement&gt; &lt;repository&gt; &lt;id&gt;releases&lt;/id&gt; &lt;name&gt;Releases&lt;/name&gt; &lt;url&gt;http://123.207.66.156:8081/repository/maven-releases/&lt;/url&gt; &lt;/repository&gt; &lt;snapshotRepository&gt; &lt;id&gt;snapshots&lt;/id&gt; &lt;name&gt;Snapshot&lt;/name&gt; &lt;url&gt;http://123.207.66.156:8081/repository/maven-snapshots/&lt;/url&gt; &lt;/snapshotRepository&gt;&lt;/distributionManagement&gt; 注意上面的repository的id值一定要跟settings.xml文件中配置的server一致。]]></content>
+        <categories>
+            <category>maven</category>
+        </categories>
+        <tags>
+            <tag>maven</tag>
+            <tag>nexus</tag>
+        </tags>
+    </entry>
+    <entry>
+        <title><![CDATA[spark基于zookeeper的高可用搭建]]></title>
+        <url>
+            %2F2017%2F12%2F26%2Fspark%E5%9F%BA%E4%BA%8Ezookeeper%E7%9A%84%E9%AB%98%E5%8F%AF%E7%94%A8%E6%90%AD%E5%BB%BA%2F
+        </url>
+        <content type="text">
+            <![CDATA[spark提供服务时，master的角色非常的重要，它负责任务分发、任务调度，可谓任重道远啊，所以我们要对master做高可用，基于zookeeper的高可用，可以自动实现master挂掉后备用的master启动，堆外提供服务。 节点分布：zookeeper: node1 node2 node3spark: node1 node2 node3 node4 编辑SPARK_HOME/conf/spark-env.sh注释掉HADOOP_CONF_DIR，添加SPARK_DAEMON_JAVA_OPTS，其他配置不变。1export SPARK_DAEMON_JAVA_OPTS=&quot;-Dspark.deploy.recoveryMode=ZOOKEEPER -Dspark.deploy.zookeeper.url=node1:2181,node2:2181,node3:2181 -Dspark.deploy.zookeeper.dir=/spark20170302&quot; 同步该配置文件spark-env.sh到其他节点scp spark-env.sh root@node2:$SPARK_HOME/confscp spark-env.sh root@node3:$SPARK_HOME/confscp spark-env.sh root@node4:$SPARK_HOME/conf 在node2节点上编辑spark-env.sh，将SPARK_MASTER_HOST修改为node21SPARK_MASTER_HOST=node2 启动spark服务在node1节点上启动spark集群1$ ./sbin/start-all.sh 启动另一个master在node2节点上只启动master1$ ./sbin/start-master.sh 访问webUI查看启动情况如果配置正确，启动正常，那么master会有两个（node1， node2），一个为ACTIVE状态，一个为STANDBY状态。]]></content>
+        <categories>
+            <category>大数据</category>
+        </categories>
+        <tags>
+            <tag>spark</tag>
+            <tag>zookeeper</tag>
+        </tags>
+    </entry>
+    <entry>
+        <title><![CDATA[单台服务器安装spark、hadoop服务文档]]></title>
+        <url>
+            %2F2017%2F12%2F26%2F%E5%8D%95%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85spark%E3%80%81hadoop%E6%9C%8D%E5%8A%A1%E6%96%87%E6%A1%A3%2F
+        </url>
+        <content type="text">
+            <![CDATA[spark作为分布式计算引擎，如果内存足够，是需要很少的磁盘空间的，在shuffle可能用到，在reduce阶段一定会用到，它是基于hdfs作为存储介质的，所以在使用spark时，应该搭建一个hdfs。 安装JDK1.8安装并配置环境变量，步骤略。 安装scala2.11.8安装并配置环境变量，步骤略。 hadoop伪分布式搭建关闭防火墙配置本机对本机免秘钥登录ssh-keygen -t rsa -P ‘’ -f ~/.ssh/id_rsassh-copy-id ip其中ip为本机ipSsh ip首次本机ssh本机需要输入密码或者yes，输入即可，第二次或者以后就不需要输入参数了。 下载hadoop-2.7.4.tar.gz包解压修改配置文件HADOOP_HOME/etc/hadoop下Hadoop.env.sh修改JAVA_HOME为jdk路径； Core-site.xmlFs.defaltFS属性修改为namenode的ipHadoop.tmp.dir修改为自定义目录，并创建好该目录123456789101112&lt;property&gt; &lt;name&gt;fs.defaultFS&lt;/name&gt; &lt;value&gt;hdfs://192.168.109.235:9000&lt;/value&gt;&lt;/property&gt;&lt;property&gt; &lt;name&gt;hadoop.tmp.dir&lt;/name&gt; &lt;value&gt;/root/chen/hadoop/data/temp&lt;/value&gt;&lt;/property&gt;&lt;property&gt; &lt;name&gt;fs.trash.interval&lt;/name&gt; &lt;value&gt;1440&lt;/value&gt;&lt;/property&gt; Hdfs-site.xml使用默认值即可12345678&lt;property&gt; &lt;name&gt;dfs.replication&lt;/name&gt; &lt;value&gt;2&lt;/value&gt;&lt;/property&gt;&lt;property&gt; &lt;name&gt;dfs.permissions&lt;/name&gt; &lt;value&gt;false&lt;/value&gt;&lt;/property&gt; Mapred-env.sh修改JAVA_HOME为jdk路径，其他默认。 Mapred-site.xml1234&lt;property&gt; &lt;name&gt;mapreduce.framework.name&lt;/name&gt; &lt;value&gt;yarn&lt;/value&gt;&lt;/property&gt; yarn-env.sh修改JAVA_HOME为java安装路径 yarn-site.xml123456789101112131415161718yarn.resourcemanager.hostname属性指定为namenode的ip地址。&lt;property&gt; &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt; &lt;value&gt;mapreduce_shuffle&lt;/value&gt;&lt;/property&gt;&lt;property&gt; &lt;name&gt;yarn.log-aggregation-enable&lt;/name&gt; &lt;value&gt;true&lt;/value&gt;&lt;/property&gt;&lt;property&gt; &lt;description&gt;The hostname of the RM.&lt;/description&gt; &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt; &lt;value&gt;192.168.109.235&lt;/value&gt;&lt;/property&gt;&lt;property&gt; &lt;name&gt;yarn.nodemanager.resource.memory-mb&lt;/name&gt; &lt;value&gt;2048&lt;/value&gt;&lt;/property&gt; 添加slaves文件在HADOOP_HOME/etc/hadoop文件夹下添加slaves文件，指定datanode节点添加localhost即可。 格式化namenode./bin/hdfs namenode –format 启动hdfs./sbin/start-all.sh jps查看节点服务的启动情况如果启动正常，那么应该有NamenodeSecondaryNamenodeResourcemanagerNodemanagerDataNode这5个角色 Web Ui访问：http://ip:50070Spark搭建下载并解压spark-2.1.0-bin-hadoop2.7.tgz修改配置文件cp slaves.template slavescp spark-env.sh.template spark-env.shcp spark-defaults.conf.template spark-defaults.confvi spark-env.sh增加参数123456789SPARK_MASTER_HOST=修改为ipSPARK_MASTER_PORT=7077SPARK_WORKER_CORES=2SPARK_WORKER_MEMORY=4gSPARK_WORKER_INSTANCES=3HADOOP_CONF_DIR=/chen/hadoop2.7/hadoop-2.7.4/etc/hadoop修改为hadoop配置文件的位置SPARK_DRIVER_MEMORY=1024MJAVA_HOME=/chen/jdk8/jdk1.8.0_144修改为jdk的路径MAVEN_OPTS=&quot;-Xms1024m -Xmx4096m -XX:PermSize=1024m&quot; vi spark-deafults.conf其中需要修改hdfs的ip地址，并创建路径/user/spark/logs 启动spark./sbin/start-all.sh正常启动的话应该有：1个Master3个Worker两个角色Web Ui访问http://ip:8080]]></content>
+        <categories>
+            <category>大数据</category>
+        </categories>
+        <tags>
+            <tag>spark</tag>
+            <tag>hadoop</tag>
+        </tags>
+    </entry>
+    <entry>
+        <title><![CDATA[linux高效编程]]></title>
+        <url>%2F2017%2F12%2F25%2Flinux%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B%2F</url>
+        <content type="text">
+            <![CDATA[本文将介绍linux命令行经常使用到的一些快捷键、编辑命令，还有强大的vim编辑器，能让你在linux上编程更高效。作为一个程序员，会使用各种快捷键不也是更炫酷的一件事吗？ linux命令行光标移动1234567891011121314151617181920212223ctrl+a --- 把光标移到行首（ahead）ctrl+e --- 把光标移到行尾（end）ctrl+l --- 清除终端（clear）ctrl+u --- 删除当前字符到行首（带有剪切功能）ctrl+k --- 删除当前字符到行尾（带有剪切功能）ctrl+y --- 粘贴ctrl+f --- 向前移动一个字符（forward）ctrl+b --- 向后移动一个字符（back）ctrl+左右箭头 --- 把光标在单词之间左右移动ctrl+w --- 删除光标前面的单词cd ~ --- 进入home目录cd - --- 返回上一目录mkdir -p path/to/filealias cd3=”cd ../../../”rename ‘.java’ ‘.java.bak’ *.java --- 批量备份文件ctrl+r --- 查询历史命令history --- 历史命令执行历史命令方法 --- ！+ 命令序号ctrl+p --- 上一条命令（或者上下箭头） 查找进程12345678910进程 进程号 所占用端口号ps -ef显示所有进程信息，包括命令行，与grep配合使用，查找特定进程显示环境变量ps -aux显示所有进程信息，包括资源占用情况，与grep配合使用netstat -anp显示协议、端口、进程号、进程名称等信息 Vimvim与vi的区别：增加了新特性：语法高亮、可视化操作、多平台支持（windows、mac、terminal） 正常模式：浏览和修改文本内容1234567891011121314151617181920R --- 替换（覆盖）当前光标位置及后面的若干文本J --- 合并当前行及下一行为一行j --- 下k --- 上h --- 左l --- 右H --- 当前屏幕第一行M --- 当前屏幕中间行L --- 当前屏幕最后一行w --- 当前光标移至下一个单词词首b --- 当前光标移至上一个单词词首e --- 下一个单词词尾$ --- 当前光标移至行尾^ --- 当前光标移至行首u --- 撤销ctrl+r --- 恢复上一步被撤销的动作 复制123456yy --- 复制当前行5yy --- 复制当前行和后4行yw --- 当前字符到下一单词的起始位置y$ --- 当前字符到当前行末尾y0/y^ --- 当前字符到当前行行首yngg/ynG --- 复制当前行到文件第n行 粘贴1p 删除1234567dw --- 删除当前光标至单词末尾ndw --- 删除当前光标后的n个字符dd --- 删除当前行d$ --- 删除光标位置至行尾d^ --- 删除光标位置至行首dgg --- 删除首行至当前行dG --- 删除当前行至末行 编辑模式 — 编辑文本从正常模式进入编辑模式123456a --- 在当前光标位置的右边添加文本A --- 在当前行的末尾位置添加文本i --- 在当前光标位置的左边添加文本I --- 在当前行的开始处添加文本(非空字符的行首)O --- 在当前行的上面新建一行o --- 在当前行的下面新建一行 可视模式：高亮选取文本后的正常模式1234v+hjkl --- 选中文本后y复制d剪切，p粘贴ctrl+v --- 以块为选取单位V --- 以行为选取单位行、块为选取单位的模式可以随意切换 命令行模式：操作文本文件123456w --- 保存wq --- 保存并退出q --- 退出q! --- 不保存退出/ --- 查询，n下一个匹配字符串，N上一个匹配字符串:set number --- 设置行号]]></content>
+        <categories>
+            <category>操作系统</category>
+        </categories>
+        <tags>
+            <tag>linux</tag>
+            <tag>programming</tag>
+        </tags>
+    </entry>
+    <entry>
+        <title><![CDATA[以Hexo网页制作模板构建Github Pages个人网站]]></title>
+        <url>%2F2017%2F12%2F19%2FcreateWebsiteHelp%2F</url>
+        <content type="text">
+            <![CDATA[个人网站制作过程，以Hexo为例，为大家讲解如何制作，如果有什么错误的地方，欢迎指正，如果有什么不懂的地方，可以email我：chenzuoli709@gmail.com。具体请看详细内容 —&gt; 1.准备环境Node.jsGit 2.安装Hexo1$ npm install -g hexo-cli 3.创建github pagesGithub官网项目名称为.github.io 4.配置Hexo123$ hexo init &lt;folder&gt;$ cd &lt;folder&gt;$ npm install 初始化完成后，该目录下的文件结构如下：1234567_config.yml --- 全局配置文件package.jsonscaffolds --- 模板source --- 文件仓库 _drafts --- 草稿 _posts --- 发布过的文件themes --- 主题 编辑_config.yml：指定项目部署的方式为git，上传到远程仓库repo的master分支上1234deploy: type: git repo: https://github.com/chenzuoli/chenzuoli.github.io.git branch: master 5.部署12hexo generate --- 生成hexo deploy --- 部署到github 6.域名映射第一步：登录你购买域名服务商提供给你的域名管理中心，我购买的是腾讯云，域名为chenzuoli.com，首先绑定主域名映射到github.com所对应的ip地址，绑定完成后，隔几分钟测试，因为DNS解析先从你的域名提供商开始，然后到其他的域名提供商，再到国外：1ping chenzuoli.com 看是否能够ping通，如果ping通，说明域名映射已经ok了第二步：登录github到.github.io项目，进入settings选项，设置自定义域名chenzuoli.com，save后，可以看到在该项目下会自动生成一个CNAME的文件，文件内容就是你设置的域名chenzuoli.com。稍等几分钟，就可以访问chenzuoli.com了。这里说明一下域名映射的流程：chenzuoli.com -&gt; github.com -&gt; chenzuoli.github.iochenzuoli.com映射到github.com，然后github.com会解析该请求寻找CNAME为chenzuoli.com的项目，然后就找到了chenzuoli.github.io，于是就可以访问了。大家赶紧试试吧。]]></content>
+        <tags>
+            <tag>hexo</tag>
+            <tag>github pages</tag>
+            <tag>blog</tag>
+        </tags>
+    </entry>
 </search>

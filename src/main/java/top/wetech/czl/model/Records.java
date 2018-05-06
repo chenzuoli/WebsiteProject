@@ -12,13 +12,12 @@ import java.util.Date;
  * time: 17:09
  * description: 访问记录model类
  */
-public class Records extends Model<Records>{
+public class Records extends Model<Records> {
+    public static final Records dao = new Records();
     private int id;
     private String uid;
     private String uip;
     private Date observetime;
-
-    public static final Records dao = new Records();
 
     public Records(int id, String uid, String uip, Date observetime) {
         this.id = id;
@@ -65,7 +64,7 @@ public class Records extends Model<Records>{
     @Override
     public String toString() {
         String observeTimeStr = "";
-        if (observeTimeStr != null){
+        if (observeTimeStr != null) {
             observeTimeStr = StringUtil.formatY_M_D_HMS.format(observetime);
         }
         return "{" +

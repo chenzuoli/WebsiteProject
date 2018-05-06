@@ -13,6 +13,7 @@ import java.util.Date;
  * description: 回复model类
  */
 public class Replies extends Model<Replies> {
+    public static final Replies dao = new Replies();
     private int id;
     private String cid;
     private String uid;
@@ -20,8 +21,6 @@ public class Replies extends Model<Replies> {
     private int like;
     private int trample;
     private Date createtime;
-
-    public static final Replies dao = new Replies();
 
     public Replies() {
     }
@@ -95,7 +94,7 @@ public class Replies extends Model<Replies> {
     @Override
     public String toString() {
         String createTimeStr = "";
-        if (createtime != null){
+        if (createtime != null) {
             createTimeStr = StringUtil.formatY_M_D_HMS.format(createtime);
         }
         return "{" +

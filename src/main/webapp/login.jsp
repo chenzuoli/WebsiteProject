@@ -1,9 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><%-- 這句很重要 不能漏--%>
 <html>
-    <head>
+<head>
     <title>登陆</title>
-    <link rel="icon" href="images/favicon-16x16.png" type="image/x-icon" />
+    <link rel="icon" href="images/favicon-16x16.png" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
     <!-- 引入 Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -21,12 +21,14 @@
             background-position: 0% 0%;
             background-size: cover
         }
+
         input {
             width: 350px;
             height: 50px;
             margin-top: 25px;
             border-radius: 10px;
         }
+
         .div {
             width: 500px;
             height: 400px;
@@ -37,6 +39,7 @@
             margin-right: auto;
             border-radius: 15px
         }
+
         .divwelcome {
             width: 500px;
             height: 80px;
@@ -47,6 +50,7 @@
             margin-left: auto;
             margin-right: auto;
         }
+
         .divuser {
             float: left;
             width: 100px;
@@ -55,6 +59,7 @@
             margin-left: auto;
             margin-right: auto;
         }
+
         .divpassword {
             float: left;
             width: 100px;
@@ -63,24 +68,28 @@
             margin-left: auto;
             margin-right: auto;
         }
+
         .divsubmit {
             width: 500px;
             height: 100px;
             margin-left: auto;
             margin-right: auto;
         }
+
         .inputuser {
             float: left;
             width: 400px;
             height: 100px;
             font-size: 20px;
         }
+
         .inputpassword {
             float: left;
             width: 400px;
             height: 100px;
             font-size: 20px;
         }
+
         .inputsubmit {
             width: 150px;
             height: 40px;
@@ -89,39 +98,40 @@
             margin-left: 175px;
             border-radius: 10px;
         }
+
         .center {
             text-align: center;
             line-height: 100px;
         }
     </style>
-    </head>
-    <body>
-        <form action="welcome.jsp" method="post">
-            <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
-            <script src="https://code.jquery.com/jquery.js"></script>
-            <!-- 包括所有已编译的插件 -->
-            <script src="js/bootstrap.min.js"></script>
-            <div class="div">
-                <div class="divwelcome">
-                    <div class="center">登陆百草园</div>
-                </div>
-                <div class="divuser">
-                    <div class="center">用户名</div>
-                </div>
-                <div class="inputuser">
-                    <input name="name" type="text"/>
-                </div>
-                <div class="divpassword">
-                    <div class="center">密码</div>
-                </div>
-                <div class="inputpassword">
-                    <input name="password" type="password"/>
-                </div>
-                <div class="divsubmit">
-                    <input class="inputsubmit" value="登陆" type="submit">
-                    <a href="register.jsp">还没有账号？点击注册</a>
-                </div>
-            </div>
-        </form>
-    </body>
+</head>
+<body>
+<form action="welcome.jsp" method="post">
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- 包括所有已编译的插件 -->
+    <script src="js/bootstrap.min.js"></script>
+    <div class="div">
+        <div class="divwelcome">
+            <div class="center">登陆百草园</div>
+        </div>
+        <div class="divuser">
+            <div class="center">用户名</div>
+        </div>
+        <div class="inputuser">
+            <input name="name" type="text"/>
+        </div>
+        <div class="divpassword">
+            <div class="center">密码</div>
+        </div>
+        <div class="inputpassword">
+            <input name="password" type="password"/>
+        </div>
+        <div class="divsubmit">
+            <input class="inputsubmit" value="登陆" type="submit">
+            <a href="register.jsp">还没有账号？点击注册</a>
+        </div>
+    </div>
+</form>
+</body>
 </html>

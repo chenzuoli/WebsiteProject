@@ -20,6 +20,10 @@ import top.wetech.czl.model.*;
  */
 
 public class JFinalCfg extends JFinalConfig {
+    public static C3p0Plugin createC3P0Plugin() {
+        return new C3p0Plugin(PropKit.get("jdbcUrl").trim(), PropKit.get("user").trim(), PropKit.get("password").trim());
+    }
+
     public void configConstant(Constants constants) {
         PropKit.use("config.properties");
         constants.setDevMode(PropKit.getBoolean("devMode", false));
@@ -44,10 +48,6 @@ public class JFinalCfg extends JFinalConfig {
         arp.addMapping("comments", "id", Comments.class);
         arp.addMapping("replies", "id", Replies.class);
         arp.addMapping("fans", "id", Fans.class);
-    }
-
-    public static C3p0Plugin createC3P0Plugin() {
-        return new C3p0Plugin(PropKit.get("jdbcUrl").trim(), PropKit.get("user").trim(), PropKit.get("password").trim());
     }
 
     public void configInterceptor(Interceptors interceptors) {

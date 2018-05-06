@@ -16,12 +16,12 @@ import java.util.List;
 
 public class RegisterController extends Controller {
 
-    public void index(){
+    public void index() {
         String uid = getPara("uid");
         String password = getPara("password");
         List<User> users = User.dao.findById(uid);
         JSONObject returnJson = new JSONObject();
-        if (users.size()>0){
+        if (users.size() > 0) {
             returnJson.put("statCode", "720");
             renderJson(returnJson);
             return;

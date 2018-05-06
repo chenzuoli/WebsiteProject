@@ -13,6 +13,7 @@ import java.util.Date;
  * description: 评论model类
  */
 public class Comments extends Model<Comments> {
+    public static final Comments dao = new Comments();
     private int id;
     private String aid;
     private String uid;
@@ -20,8 +21,6 @@ public class Comments extends Model<Comments> {
     private int like;
     private int trample;
     private Date createtime;
-
-    public static final Comments dao = new Comments();
 
     public Comments() {
     }
@@ -95,7 +94,7 @@ public class Comments extends Model<Comments> {
     @Override
     public String toString() {
         String createTimeStr = "";
-        if (createtime != null){
+        if (createtime != null) {
             createTimeStr = StringUtil.formatY_M_D_HMS.format(createtime);
         }
         return "{" +

@@ -114,13 +114,13 @@ public class StringUtil {
     }
 
     /**
-    * @Description: 检验字符串是否为jsonArray结构
-    * @Param: [jsonStr]
-    * @return: boolean
-    * @Author: CHEN ZUOLI
-    * @Date: 2018/4/17
-    * @Time: 10:27
-    */
+     * @Description: 检验字符串是否为jsonArray结构
+     * @Param: [jsonStr]
+     * @return: boolean
+     * @Author: CHEN ZUOLI
+     * @Date: 2018/4/17
+     * @Time: 10:27
+     */
     public static boolean checkValidJsonArrayStr(String jsonStr) {
         boolean flag = false;
         try {

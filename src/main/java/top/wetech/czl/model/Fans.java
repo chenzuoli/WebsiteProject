@@ -13,13 +13,12 @@ import java.util.Date;
  * description: 粉丝Model类
  */
 public class Fans extends Model<Fans> {
+    public static final Fans dao = new Fans();
     private int id;
     private String fid;
     private String aid;
     private Date lovetime;
     private Date leavetime;
-
-    public static final Fans dao = new Fans();
 
     public Fans() {
     }
@@ -76,10 +75,10 @@ public class Fans extends Model<Fans> {
     public String toString() {
         String loveTimeStr = "";
         String leaveTimeStr = "";
-        if (loveTimeStr != null){
+        if (loveTimeStr != null) {
             loveTimeStr = StringUtil.formatY_M_D_HMS.format(lovetime);
         }
-        if (leaveTimeStr != null){
+        if (leaveTimeStr != null) {
             leaveTimeStr = StringUtil.formatY_M_D_HMS.format(leavetime);
         }
         return "{" +

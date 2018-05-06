@@ -15,6 +15,7 @@ import java.util.List;
  */
 
 public class User extends Model<User> {
+    public static final User dao = new User();
     private int id;
     private String uid;
     private String uname;
@@ -26,7 +27,21 @@ public class User extends Model<User> {
     private Date createtime;
     private Date updatetime;
 
-    public static final User dao = new User();
+    public User() {
+    }
+
+    public User(int id, String uid, String uname, String mobile, String email, long qq, String wechat, String password, Date createtime, Date updatetime) {
+        this.id = id;
+        this.uid = uid;
+        this.uname = uname;
+        this.mobile = mobile;
+        this.email = email;
+        this.qq = qq;
+        this.wechat = wechat;
+        this.password = password;
+        this.createtime = createtime;
+        this.updatetime = updatetime;
+    }
 
     /**
      * 查找用户，用于登录
@@ -54,22 +69,6 @@ public class User extends Model<User> {
     public boolean saveUser(String uid, String password) {
         boolean isSaved = set("uid", uid).set("password", password).save();
         return isSaved;
-    }
-
-    public User() {
-    }
-
-    public User(int id, String uid, String uname, String mobile, String email, long qq, String wechat, String password, Date createtime, Date updatetime) {
-        this.id = id;
-        this.uid = uid;
-        this.uname = uname;
-        this.mobile = mobile;
-        this.email = email;
-        this.qq = qq;
-        this.wechat = wechat;
-        this.password = password;
-        this.createtime = createtime;
-        this.updatetime = updatetime;
     }
 
     public int getId() {
@@ -156,10 +155,10 @@ public class User extends Model<User> {
     public String toString() {
         String createTimeStr = "";
         String updateTimeStr = "";
-        if (createtime != null){
+        if (createtime != null) {
             createTimeStr = StringUtil.formatY_M_D_HMS.format(createtime);
         }
-        if (updatetime != null){
+        if (updatetime != null) {
             updateTimeStr = StringUtil.formatY_M_D_HMS.format(updatetime);
         }
         return "{" +

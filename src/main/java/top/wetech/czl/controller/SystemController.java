@@ -41,7 +41,7 @@ public class SystemController extends Controller {
             addArticle(jsonArray, articles);
             returnJson.put("statCode", "709");
             returnJson.put("articles", jsonArray);
-        } catch (Exception e){
+        } catch (Exception e) {
             logger.error("query hotest articles exception: " + e);
             returnJson.put("statCode", "750");
         }
@@ -61,7 +61,7 @@ public class SystemController extends Controller {
     /**
      * 根据文章分类来获取热门文章，前10篇
      */
-    public void hotArticleByCategory(){
+    public void hotArticleByCategory() {
         String category = getPara("category");
         String sql = "select mid, uid, title, articleid, content, tags, clicks, fans, createtime, updatetime from articles where mid = ? order by clicks desc limit 10";
         JSONObject returnJson = new JSONObject();
@@ -71,7 +71,7 @@ public class SystemController extends Controller {
             addArticle(jsonArray, articles);
             returnJson.put("statCode", "709");
             returnJson.put("articles", jsonArray);
-        } catch (Exception e){
+        } catch (Exception e) {
             logger.error("query hotest articles by category exception: " + e);
             returnJson.put("statCode", "750");
         }
@@ -101,12 +101,12 @@ public class SystemController extends Controller {
                 returnJson.put("statCode", "750");
             } else {
                 int pageNum = Integer.parseInt(pageNumStr);
-                startNum = (pageNum-1) * 10;
+                startNum = (pageNum - 1) * 10;
                 endNum = (pageNum) * 10;
                 returnJson.put("statCode", "709");
             }
             List<Article> articles;
-            if (category == null){
+            if (category == null) {
                 articles = Article.dao.find(sql, startNum, endNum);
             } else {
                 articles = Article.dao.find(sql, category, startNum, endNum);
