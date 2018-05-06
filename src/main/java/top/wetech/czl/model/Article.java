@@ -1,6 +1,9 @@
 package top.wetech.czl.model;
 
+import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Model;
+import net.sf.json.JSONObject;
+import org.apache.log4j.Logger;
 import top.wetech.czl.util.StringUtil;
 
 import java.util.Date;
@@ -24,10 +27,13 @@ public class Article extends Model<Article> {
     private String tags;
     private int clicks;
     private int fans;
+    private int thumbsup;
+    private int thumbsdown;
     private Date createtime;
     private Date updatetime;
+    private Logger logger = Logger.getLogger(Article.class);
 
-    public Article(int id, String mid, String uid, String title, String articleid, String content, String tags, int clicks, int fans, Date createtime, Date updatetime) {
+    public Article(int id, String mid, String uid, String title, String articleid, String content, String tags, int clicks, int fans, int thumbsup, int thumbsdown, Date createtime, Date updatetime) {
         this.id = id;
         this.mid = mid;
         this.uid = uid;
@@ -37,6 +43,8 @@ public class Article extends Model<Article> {
         this.tags = tags;
         this.clicks = clicks;
         this.fans = fans;
+        this.thumbsup = thumbsup;
+        this.thumbsdown = thumbsdown;
         this.createtime = createtime;
         this.updatetime = updatetime;
     }
@@ -58,19 +66,61 @@ public class Article extends Model<Article> {
     }
 
     /**
-     * 查询文章内容
-     *
-     * @param articleId 文章id
-     * @return 文章类
-     */
+    * description: 查询文章内容
+    * datetime: 2018/5/6 18:41
+    * params: [articleId]
+    * returns: top.wetech.czl.model.Article
+    */
     public Article queryArticle(String articleId) {
         Article article = null;
-        String queryArticleSql = "select mid, uid, title, articleid, content, tags, clicks, fans, createtime, updatetime from articles where articleid = ?";
+        String queryArticleSql = "select mid, uid, title, articleid, content, tags, clicks, fans, thumbsup, thumbsdown, createtime, updatetime from articles where articleid = ?";
         List<Article> articles = find(queryArticleSql, articleId);
         if (articles.size() > 0) {
             article = articles.get(0);
         }
         return article;
+    }
+
+    /**
+     * description: 更新文章的点赞与踩的次数
+     * datetime: 2018/5/6 18:12
+     * params: [articleId, thumbs]
+     * returns: boolean
+     */
+    public boolean changeThumbs(String articleId, String thumbs) {
+        boolean flag = false;
+        try {
+            String querySql = "select thumbsup, thumbsdown from articles where articleid = ?";
+            List<Article> articles = find(querySql, articleId);
+            if (articles.size() > 0) {
+                Object thumbsupObj = articles.get(0).get("thumbsup");
+                Object thumbsdownObj = articles.get(0).get("thumbsdown");
+                if ("+".equals(thumbs) && thumbsupObj != null) {
+                    int thumbsup;
+                    if (thumbsupObj.toString().matches("\\d")) {
+                        thumbsup = Integer.parseInt(thumbsupObj.toString());
+                    } else {
+                        thumbsup = 1;
+                    }
+                    String sql = "update articles set thumbsup = ? where articleid = ?";
+                    Db.update(sql, (thumbsup + 1), articleId);
+                    flag = true;
+                } else if ("-".equals(thumbs) && thumbsdownObj != null) {
+                    int thumbsdown;
+                    if (thumbsdownObj.toString().matches("\\d")) {
+                        thumbsdown = Integer.parseInt(thumbsdownObj.toString());
+                    } else {
+                        thumbsdown = 1;
+                    }
+                    String sql = "update articles set thumbsdown = ? where articleid = ?";
+                    Db.update(sql, (thumbsdown + 1), articleId);
+                    flag = true;
+                }
+            }
+        } catch (Exception e) {
+            logger.error("change thumbs exception: " + e + " at articleid = " + articleId + ", thumbs is " + thumbs);
+        }
+        return flag;
     }
 
     public int getId() {
@@ -145,6 +195,22 @@ public class Article extends Model<Article> {
         this.fans = fans;
     }
 
+    public int getThumbsup() {
+        return thumbsup;
+    }
+
+    public void setThumbsup(int thumbsup) {
+        this.thumbsup = thumbsup;
+    }
+
+    public int getThumbsdown() {
+        return thumbsdown;
+    }
+
+    public void setThumbsdown(int thumbsdown) {
+        this.thumbsdown = thumbsdown;
+    }
+
     public Date getCreatetime() {
         return createtime;
     }
@@ -181,6 +247,8 @@ public class Article extends Model<Article> {
                 ", \"tags\":\"" + tags + "\"" +
                 ", \"clicks\":" + clicks +
                 ", \"fans\":" + fans +
+                ", \"thumbsup\":" + thumbsup +
+                ", \"thumbsdown\":" + thumbsdown +
                 ", \"createtime\":\"" + createTimeStr + "\"" +
                 ", \"updatetime\":\"" + updateTimeStr + "\"" +
                 "}";
