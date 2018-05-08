@@ -6,8 +6,10 @@ import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
 import top.wetech.czl.model.Article;
 import top.wetech.czl.model.Comments;
+import top.wetech.czl.model.Replies;
 import top.wetech.czl.util.StringUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,20 +37,6 @@ public class SystemController extends Controller {
             jsonObject.put("statCode", "750");
         }
         renderJson(jsonObject);
-    }
-
-    /**
-     * description: 查询文章详情、评论点赞踩详情
-     * datetime: 2018/5/6 19:10
-     * params: []
-     * returns: void
-     */
-    public void articleDetails() {
-        String articleId = getPara("articleid");
-        JSONObject returnJson = new JSONObject();
-        getArticle(articleId, returnJson);
-        getComments(articleId, returnJson);
-        renderJson(returnJson);
     }
 
     /**
@@ -190,6 +178,31 @@ public class SystemController extends Controller {
         }
     }
 
+    private void replyToJsonObject(Replies reply, JSONObject jsonObject){
+        String[] attrNames = reply.getAttrNames();
+        for (int j = 0; j < attrNames.length; j++) {
+            jsonObject.put(attrNames[j], reply.get(attrNames[j]));
+            Object createtime = reply.get("createtime");
+            Object updatetime = reply.get("updatetime");
+            jsonObject.put("createtime", createtime == null ? null : StringUtil.formatY_M_D_HMS.format(createtime));
+            jsonObject.put("updatetime", updatetime == null ? null : StringUtil.formatY_M_D_HMS.format(updatetime));
+        }
+    }
+
+    /**
+     * description: 查询文章详情、评论点赞踩详情
+     * datetime: 2018/5/6 19:10
+     * params: []
+     * returns: void
+     */
+    public void articleDetails() {
+        String articleId = getPara("articleid");
+        JSONObject returnJson = new JSONObject();
+        getArticle(articleId, returnJson);
+        getComments(articleId, returnJson);
+        renderJson(returnJson);
+    }
+
     private void getArticle(String articleId, JSONObject returnJson) {
         try {
             JSONObject articleJson = new JSONObject();
@@ -212,22 +225,45 @@ public class SystemController extends Controller {
     private void getComments(String articleId, JSONObject returnJson) {
         try {
             JSONArray commentsJson = new JSONArray();
-            String queryCommentSql = "select aid, uid, comment, 'like', trample, createtime from comments where aid = ?";
-            List<Comments> comments = Comments.dao.find(queryCommentSql, articleId);
-            if (comments.size() > 0) {
-                returnJson.put("statCode", "709");
-                comments.forEach(comment -> {
-                    JSONObject jsonObject = new JSONObject();
-                    commentToJsonObject(comment, jsonObject);
-                    commentsJson.add(jsonObject);
-                });
-            } else {
-                returnJson.put("statCode", "750");
+            if ("709".equals(returnJson.optString("statCode"))){
+                String queryCommentSql = "select id, aid, uid, comment, 'like', trample, createtime from comments where aid = ? limit 10";
+                List<Comments> comments = Comments.dao.find(queryCommentSql, articleId);
+                if (comments.size() > 0) {
+                    returnJson.put("statCode", "709");
+                    comments.forEach(comment -> {
+                        JSONObject jsonObject = new JSONObject();
+                        commentToJsonObject(comment, jsonObject);
+                        JSONArray replies = getReplies(comment);
+                        jsonObject.put("replies", replies);
+                        commentsJson.add(jsonObject);
+                    });
+                } else {
+                    returnJson.put("statCode", "750");
+                }
             }
             returnJson.put("comments", commentsJson);
         } catch (Exception e){
-            logger.error("get comments exception: " + e);
+            logger.error("get comments exception: " + e + " at article id is " + articleId);
         }
+    }
+
+    private JSONArray getReplies(Comments comment){
+        JSONArray jsonArray = new JSONArray();
+        Object id = comment.get("id");
+        try {
+            if (id != null){
+                String sql = "select id, cid, uid, comment, 'like', trample, createtime from replies where cid = ?";
+                List<Replies> replies = Replies.dao.find(sql, id.toString());
+                replies.forEach(reply -> {
+                    JSONObject jsonObject = new JSONObject();
+                    replyToJsonObject(reply, jsonObject);
+                    jsonArray.add(jsonObject);
+                });
+            }
+        } catch (Exception e){
+            logger.error("get replies exception: " + e + " at comment id is " + id);
+        }
+        return jsonArray;
     }
 
 }
