@@ -1,11 +1,13 @@
 package top.wetech.czl.controller;
 
 import com.jfinal.core.Controller;
+import com.jfinal.plugin.activerecord.Model;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
 import top.wetech.czl.model.Article;
 import top.wetech.czl.model.Comments;
+import top.wetech.czl.model.Menu;
 import top.wetech.czl.model.Replies;
 import top.wetech.czl.util.StringUtil;
 
@@ -23,6 +25,18 @@ public class SystemController extends Controller {
     private Logger logger = Logger.getLogger(SystemController.class);
 
     /**
+    * description: 获取菜单栏详情
+    * param: []
+    * return: void
+    * date: 2018/5/20
+    * time: 15:25
+    */
+    public void menu(){
+        JSONObject jsonObject = getMenu();
+        renderJson(jsonObject);
+    }
+
+    /**
      * 查询文章详情：文章详情
      */
     public void article() {
@@ -31,7 +45,7 @@ public class SystemController extends Controller {
         JSONObject jsonObject = new JSONObject();
         if (article != null) {
             jsonObject.put("statCode", "709");
-            articleToJsonObject(article, jsonObject);
+            modelToJsonObject(article, jsonObject);
         } else {
             jsonObject.put("statCode", "750");
         }
@@ -150,39 +164,19 @@ public class SystemController extends Controller {
         for (int i = 0; i < articles.size(); i++) {
             Article article = articles.get(i);
             JSONObject jsonObject = new JSONObject();
-            articleToJsonObject(article, jsonObject);
+            modelToJsonObject(article, jsonObject);
             jsonArray.add(jsonObject);
         }
     }
 
-    private void articleToJsonObject(Article article, JSONObject jsonObject) {
-        String[] attrNames = article.getAttrNames();
-        for (int j = 0; j < attrNames.length; j++) {
-            jsonObject.put(attrNames[j], article.get(attrNames[j]));
-            Object createtime = article.get("createtime");
-            Object updatetime = article.get("updatetime");
-            jsonObject.put("createtime", createtime == null ? null : StringUtil.formatY_M_D_HMS.format(createtime));
-            jsonObject.put("updatetime", updatetime == null ? null : StringUtil.formatY_M_D_HMS.format(updatetime));
-        }
-    }
 
-    private void commentToJsonObject(Comments comment, JSONObject jsonObject) {
-        String[] attrNames = comment.getAttrNames();
-        for (int j = 0; j < attrNames.length; j++) {
-            jsonObject.put(attrNames[j], comment.get(attrNames[j]));
-            Object createtime = comment.get("createtime");
-            Object updatetime = comment.get("updatetime");
-            jsonObject.put("createtime", createtime == null ? null : StringUtil.formatY_M_D_HMS.format(createtime));
-            jsonObject.put("updatetime", updatetime == null ? null : StringUtil.formatY_M_D_HMS.format(updatetime));
-        }
-    }
 
-    private void replyToJsonObject(Replies reply, JSONObject jsonObject){
-        String[] attrNames = reply.getAttrNames();
-        for (int j = 0; j < attrNames.length; j++) {
-            jsonObject.put(attrNames[j], reply.get(attrNames[j]));
-            Object createtime = reply.get("createtime");
-            Object updatetime = reply.get("updatetime");
+    private void modelToJsonObject(Model model, JSONObject jsonObject){
+        String[] attrNames = model.getAttrNames();
+        for (int i = 0; i < attrNames.length; i++) {
+            jsonObject.put(attrNames[i], model.get(attrNames[i]));
+            Object createtime = model.get("createtime");
+            Object updatetime = model.get("updatetime");
             jsonObject.put("createtime", createtime == null ? null : StringUtil.formatY_M_D_HMS.format(createtime));
             jsonObject.put("updatetime", updatetime == null ? null : StringUtil.formatY_M_D_HMS.format(updatetime));
         }
@@ -210,7 +204,7 @@ public class SystemController extends Controller {
             if (articles.size() > 0) {
                 returnJson.put("statCode", "709");
                 Article article = articles.get(0);
-                articleToJsonObject(article, articleJson);
+                modelToJsonObject(article, articleJson);
                 returnJson.put("article", articleJson);
             } else {
                 returnJson.put("statCode", "750");
@@ -231,8 +225,9 @@ public class SystemController extends Controller {
                     returnJson.put("statCode", "709");
                     comments.forEach(comment -> {
                         JSONObject jsonObject = new JSONObject();
-                        commentToJsonObject(comment, jsonObject);
-                        JSONArray replies = getReplies(comment);
+                        modelToJsonObject(comment, jsonObject);
+                        JSONArray replies = new JSONArray();
+                        getReplies(comment, replies);
                         jsonObject.put("replies", replies);
                         commentsJson.add(jsonObject);
                     });
@@ -246,8 +241,7 @@ public class SystemController extends Controller {
         }
     }
 
-    private JSONArray getReplies(Comments comment){
-        JSONArray jsonArray = new JSONArray();
+    private void getReplies(Comments comment, JSONArray jsonArray){
         Object id = comment.get("id");
         try {
             if (id != null){
@@ -255,14 +249,33 @@ public class SystemController extends Controller {
                 List<Replies> replies = Replies.dao.find(sql, id.toString());
                 replies.forEach(reply -> {
                     JSONObject jsonObject = new JSONObject();
-                    replyToJsonObject(reply, jsonObject);
+                    modelToJsonObject(reply, jsonObject);
                     jsonArray.add(jsonObject);
                 });
             }
         } catch (Exception e){
             logger.error("get replies exception: " + e + " at comment id is " + id);
         }
-        return jsonArray;
+    }
+
+    private JSONObject getMenu(){
+        JSONObject returnJson = new JSONObject();
+        String sql = "select mid, name from menu";
+        List<Menu> menus = Menu.dao.find(sql);
+        JSONArray jsonArray = new JSONArray();
+        if (menus.size() > 0) {
+            returnJson.put("statCode", "709");
+            menus.forEach(menu -> {
+                JSONObject jsonObject = new JSONObject();
+                modelToJsonObject(menu, jsonObject);
+                jsonArray.add(jsonObject);
+            });
+            returnJson.put("menus", jsonArray);
+        } else {
+            returnJson.put("statCode", "750");
+            returnJson.put("menus", jsonArray);
+        }
+        return returnJson;
     }
 
 }

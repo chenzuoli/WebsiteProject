@@ -48,6 +48,7 @@ public class JFinalCfg extends JFinalConfig {
         arp.addMapping("comments", "id", Comments.class);
         arp.addMapping("replies", "id", Replies.class);
         arp.addMapping("fans", "id", Fans.class);
+        arp.addMapping("menu", "mid", Menu.class);
     }
 
     public void configInterceptor(Interceptors interceptors) {
