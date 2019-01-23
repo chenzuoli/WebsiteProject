@@ -22,7 +22,7 @@ public class Article extends Model<Article> {
     private String mid;
     private String uid;
     private String title;
-    private String articleid;
+    private String aid;
     private String content;
     private String tags;
     private int clicks;
@@ -33,12 +33,12 @@ public class Article extends Model<Article> {
     private Date updatetime;
     private Logger logger = Logger.getLogger(Article.class);
 
-    public Article(int id, String mid, String uid, String title, String articleid, String content, String tags, int clicks, int fans, int thumbsup, int thumbsdown, Date createtime, Date updatetime) {
+    public Article(int id, String mid, String uid, String title, String aid, String content, String tags, int clicks, int fans, int thumbsup, int thumbsdown, Date createtime, Date updatetime) {
         this.id = id;
         this.mid = mid;
         this.uid = uid;
         this.title = title;
-        this.articleid = articleid;
+        this.aid = aid;
         this.content = content;
         this.tags = tags;
         this.clicks = clicks;
@@ -61,7 +61,7 @@ public class Article extends Model<Article> {
      * @param content 文章内容
      */
     public boolean saveArticle(String title, String tag, String uid, String content) {
-        boolean isSave = set("content", content).set("title", title).set("uid", uid).set("tags", tag).set("articleid", UUID.randomUUID().toString()).save();
+        boolean isSave = set("content", content).set("title", title).set("uid", uid).set("tags", tag).set("aid", UUID.randomUUID().toString()).save();
         return isSave;
     }
 
@@ -73,7 +73,7 @@ public class Article extends Model<Article> {
     */
     public Article queryArticle(String articleId) {
         Article article = null;
-        String queryArticleSql = "select mid, uid, title, articleid, content, tags, clicks, fans, thumbsup, thumbsdown, createtime, updatetime from articles where articleid = ?";
+        String queryArticleSql = "select mid, uid, title, aid, content, tags, clicks, fans, thumbsup, thumbsdown, createtime, updatetime from articles where aid = ?";
         List<Article> articles = find(queryArticleSql, articleId);
         if (articles.size() > 0) {
             article = articles.get(0);
@@ -90,7 +90,7 @@ public class Article extends Model<Article> {
     public boolean changeThumbs(String articleId, String thumbs) {
         boolean flag = false;
         try {
-            String querySql = "select thumbsup, thumbsdown from articles where articleid = ?";
+            String querySql = "select thumbsup, thumbsdown from articles where aid = ?";
             List<Article> articles = find(querySql, articleId);
             if (articles.size() > 0) {
                 Object thumbsupObj = articles.get(0).get("thumbsup");
@@ -102,7 +102,7 @@ public class Article extends Model<Article> {
                     } else {
                         thumbsup = 1;
                     }
-                    String sql = "update articles set thumbsup = ? where articleid = ?";
+                    String sql = "update articles set thumbsup = ? where aid = ?";
                     Db.update(sql, (thumbsup + 1), articleId);
                     flag = true;
                 } else if ("-".equals(thumbs) && thumbsdownObj != null) {
@@ -112,13 +112,13 @@ public class Article extends Model<Article> {
                     } else {
                         thumbsdown = 1;
                     }
-                    String sql = "update articles set thumbsdown = ? where articleid = ?";
+                    String sql = "update articles set thumbsdown = ? where aid = ?";
                     Db.update(sql, (thumbsdown + 1), articleId);
                     flag = true;
                 }
             }
         } catch (Exception e) {
-            logger.error("change thumbs exception: " + e + " at articleid = " + articleId + ", thumbs is " + thumbs);
+            logger.error("change thumbs exception: " + e + " at aid = " + articleId + ", thumbs is " + thumbs);
         }
         return flag;
     }
@@ -156,11 +156,11 @@ public class Article extends Model<Article> {
     }
 
     public String getArticleid() {
-        return articleid;
+        return aid;
     }
 
-    public void setArticleid(String articleid) {
-        this.articleid = articleid;
+    public void setArticleid(String aid) {
+        this.aid = aid;
     }
 
     public String getContent() {
@@ -242,7 +242,7 @@ public class Article extends Model<Article> {
                 ", \"mid\":\"" + mid + "\"" +
                 ", \"uid\":\"" + uid + "\"" +
                 ", \"title\":\"" + title + "\"" +
-                ", \"articleid\":\"" + articleid + "\"" +
+                ", \"aid\":\"" + aid + "\"" +
                 ", \"content\":\"" + content + "\"" +
                 ", \"tags\":\"" + tags + "\"" +
                 ", \"clicks\":" + clicks +

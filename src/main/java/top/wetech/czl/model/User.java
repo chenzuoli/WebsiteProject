@@ -5,6 +5,7 @@ import top.wetech.czl.util.StringUtil;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Company: 北京通付盾数据科技有限公司
@@ -16,7 +17,7 @@ import java.util.List;
 
 public class User extends Model<User> {
     public static final User dao = new User();
-    private int id;
+    private String id;
     private String uid;
     private String uname;
     private String mobile;
@@ -30,7 +31,7 @@ public class User extends Model<User> {
     public User() {
     }
 
-    public User(int id, String uid, String uname, String mobile, String email, long qq, String wechat, String password, Date createtime, Date updatetime) {
+    public User(String id, String uid, String uname, String mobile, String email, long qq, String wechat, String password, Date createtime, Date updatetime) {
         this.id = id;
         this.uid = uid;
         this.uname = uname;
@@ -67,15 +68,15 @@ public class User extends Model<User> {
      * @param password 密码
      */
     public boolean saveUser(String uid, String password) {
-        boolean isSaved = set("uid", uid).set("password", password).save();
+        boolean isSaved = set("id", UUID.randomUUID().toString()).set("uid", uid).set("password", password).save();
         return isSaved;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

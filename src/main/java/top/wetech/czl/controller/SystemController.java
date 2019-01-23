@@ -40,7 +40,7 @@ public class SystemController extends Controller {
      * 查询文章详情：文章详情
      */
     public void article() {
-        String articleId = getPara("articleid");
+        String articleId = getPara("aid");
         Article article = Article.dao.queryArticle(articleId);
         JSONObject jsonObject = new JSONObject();
         if (article != null) {
@@ -59,7 +59,7 @@ public class SystemController extends Controller {
         JSONObject returnJson = new JSONObject();
         JSONArray jsonArray = new JSONArray();
         try {
-            String sql = "select mid, uid, title, articleid, content, tags, clicks, fans, thumbsup, thumbsdown, createtime, updatetime from articles order by clicks desc limit 10";
+            String sql = "select mid, uid, title, aid, content, tags, clicks, fans, thumbsup, thumbsdown, createtime, updatetime from articles order by clicks desc limit 10";
             List<Article> articles = Article.dao.find(sql);
             addArticle(jsonArray, articles);
             returnJson.put("statCode", "709");
@@ -76,7 +76,7 @@ public class SystemController extends Controller {
      */
     public void hotArticleNext() {
         String pageNumStr = getPara("pageNum");
-        String sql = "select mid, uid, title, articleid, content, tags, clicks, fans, thumbsup, thumbsdown, createtime, updatetime from articles order by clicks desc limit ?, ?";
+        String sql = "select mid, uid, title, aid, content, tags, clicks, fans, thumbsup, thumbsdown, createtime, updatetime from articles order by clicks desc limit ?, ?";
         JSONObject returnJson = hotArticle(sql, null, pageNumStr);
         renderJson(returnJson);
     }
@@ -86,7 +86,7 @@ public class SystemController extends Controller {
      */
     public void hotArticleByCategory() {
         String category = getPara("category");
-        String sql = "select mid, uid, title, articleid, content, tags, clicks, fans, thumbsup, thumbsdown, createtime, updatetime from articles where mid = ? order by clicks desc limit 10";
+        String sql = "select mid, uid, title, aid, content, tags, clicks, fans, thumbsup, thumbsdown, createtime, updatetime from articles where mid = ? order by clicks desc limit 10";
         JSONObject returnJson = new JSONObject();
         JSONArray jsonArray = new JSONArray();
         try {
@@ -107,20 +107,20 @@ public class SystemController extends Controller {
     public void hotArticleByCategoryNext() {
         String category = getPara("category");
         String pageNumStr = getPara("pageNum");
-        String sql = "select mid, uid, title, articleid, content, tags, clicks, fans, thumbsup, thumbsdown, createtime, updatetime from articles where mid = ? order by clicks desc limit ?, ?";
+        String sql = "select mid, uid, title, aid, content, tags, clicks, fans, thumbsup, thumbsdown, createtime, updatetime from articles where mid = ? order by clicks desc limit ?, ?";
         JSONObject returnJson = hotArticle(sql, category, pageNumStr);
         renderJson(returnJson);
     }
 
     /**
      * 为文章点赞、踩，需传递参数文章id及点赞还是踩
-     * 1.articleid
+     * 1.aid
      * 2.thumb：+代表点赞，-代表踩
      */
     public void articleThrumbUpDown() {
-        String articleid = getPara("articleid");
+        String aid = getPara("aid");
         String thumb = getPara("thumbs");
-        boolean isChanged = Article.dao.changeThumbs(articleid, thumb);
+        boolean isChanged = Article.dao.changeThumbs(aid, thumb);
         JSONObject returnJson = new JSONObject();
         if (isChanged) {
             returnJson.put("statCode", "709");
@@ -189,7 +189,7 @@ public class SystemController extends Controller {
      * returns: void
      */
     public void articleDetails() {
-        String articleId = getPara("articleid");
+        String articleId = getPara("aid");
         JSONObject returnJson = new JSONObject();
         getArticle(articleId, returnJson);
         getComments(articleId, returnJson);
@@ -199,7 +199,7 @@ public class SystemController extends Controller {
     private void getArticle(String articleId, JSONObject returnJson) {
         try {
             JSONObject articleJson = new JSONObject();
-            String queryArticleSql = "select mid, uid, title, articleid, content, tags, clicks, fans, thumbsup, thumbsdown, createtime, updatetime from articles where articleid = ?";
+            String queryArticleSql = "select mid, uid, title, aid, content, tags, clicks, fans, thumbsup, thumbsdown, createtime, updatetime from articles where aid = ?";
             List<Article> articles = Article.dao.find(queryArticleSql, articleId);
             if (articles.size() > 0) {
                 returnJson.put("statCode", "709");
