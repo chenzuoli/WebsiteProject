@@ -1,5 +1,6 @@
 package top.wetech.czl.model;
 
+import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Model;
 import top.wetech.czl.util.StringUtil;
 
@@ -67,9 +68,27 @@ public class User extends Model<User> {
      * @param uid      用户id
      * @param password 密码
      */
-    public boolean saveUser(String uid, String password) {
-        boolean isSaved = set("id", UUID.randomUUID().toString()).set("uid", uid).set("password", password).save();
+    public boolean saveUser(String uname, String uid, String password) {
+        boolean isSaved = set("id", UUID.randomUUID().toString()).set("uname", uname).set("uid", uid).set("password", password).save();
         return isSaved;
+    }
+
+    public boolean changepwd(String uid, String password) {
+        boolean isupdated = false;
+        int update = Db.update("update users set password = ?, updatetime = ? where uid = ?", password, StringUtil.getCurTime() ,uid);
+        if (update > 0) {
+            isupdated = true;
+        }
+        return isupdated;
+    }
+
+    public  boolean changeinfo(String uid, String uname, String mobile, String email, String qq, String wechat) {
+        boolean isupdated = false;
+        int update = Db.update("update users set uname = ?, mobile = ?, email = ?, qq = ?, wechat = ?, updatetime = ? where uid = ?", uname, mobile, email, qq, wechat, StringUtil.getCurTime(), uid);
+        if (update > 0) {
+            isupdated = true;
+        }
+        return isupdated;
     }
 
     public String getId() {

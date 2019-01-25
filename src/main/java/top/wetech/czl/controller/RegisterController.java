@@ -17,6 +17,7 @@ import java.util.List;
 public class RegisterController extends Controller {
 
     public void index() {
+        String uname = getPara("uname");
         String uid = getPara("uid");
         String password = getPara("password");
         List<User> users = User.dao.findById(uid);
@@ -26,7 +27,7 @@ public class RegisterController extends Controller {
             renderJson(returnJson);
             return;
         }
-        boolean isSaved = User.dao.saveUser(uid, password);
+        boolean isSaved = User.dao.saveUser(uname, uid, password);
         if (isSaved) {
             returnJson.put("statCode", "709");
         } else {

@@ -5,10 +5,7 @@ import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.render.ViewType;
-import top.wetech.czl.controller.IndexController;
-import top.wetech.czl.controller.LoginController;
-import top.wetech.czl.controller.RegisterController;
-import top.wetech.czl.controller.SystemController;
+import top.wetech.czl.controller.*;
 import top.wetech.czl.model.*;
 
 /**
@@ -35,6 +32,7 @@ public class JFinalCfg extends JFinalConfig {
         routes.add("/login", LoginController.class);
         routes.add("/system", SystemController.class);
         routes.add("/register", RegisterController.class);
+        routes.add("/user", UserController.class);
     }
 
     public void configPlugin(Plugins plugins) {

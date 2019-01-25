@@ -147,6 +147,10 @@ public class StringUtil {
         return str;
     }
 
+    public static String getCurTime(){
+        return  formatY_M_D_HMS.format(new Date());
+    }
+
     public static void main(String[] args) {
 //        Date date = parseStringToDate("2018-1-12 01:1:66");
 //        logger.info(date);
