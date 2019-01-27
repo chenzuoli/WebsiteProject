@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  * user: chenzuoli
- * company: 北京通付盾数据科技有限公司
+ * company: wetech.top
  * date: 2018/4/29
  * time: 16:44
  * description: 评论model类

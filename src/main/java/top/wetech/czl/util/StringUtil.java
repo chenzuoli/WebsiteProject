@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Company: 北京通付盾数据科技有限公司
+ * Company: wetech.top
  * User: 陈作立
  * Date: 2018/4/10
  * Time: 10:24

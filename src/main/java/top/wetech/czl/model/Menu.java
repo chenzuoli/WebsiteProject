@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 import java.util.List;
 
 /**
- * company: 北京通付盾数据科技有限公司
+ * company: wetech.top
  * user: chenzuoli
  * date: 2018/5/20
  * time: 15:19

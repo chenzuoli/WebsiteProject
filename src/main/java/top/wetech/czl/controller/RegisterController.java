@@ -7,7 +7,7 @@ import top.wetech.czl.model.User;
 import java.util.List;
 
 /**
- * Company: 北京通付盾数据科技有限公司
+ * Company: wetech.top
  * User: Chen
  * Date: 2018/2/3
  * Time: 14:46

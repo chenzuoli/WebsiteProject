@@ -3,7 +3,7 @@ package top.wetech.czl.controller;
 import com.jfinal.core.Controller;
 
 /**
- * Company: 北京通付盾数据科技有限公司
+ * Company: wetech.top
  * User: Chen
  * Date: 2018/2/3
  * Time: 14:43
