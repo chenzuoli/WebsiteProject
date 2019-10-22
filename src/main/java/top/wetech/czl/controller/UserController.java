@@ -8,8 +8,8 @@ import top.wetech.czl.model.User;
 import java.util.List;
 
 /**
- * company: 直租邦
- * user: CHENZUOLI
+ * company: wetech.top
+ * user: chenzuoli
  * date: 2019/1/25 21:25
  * description:
  */

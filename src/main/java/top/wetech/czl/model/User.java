@@ -10,7 +10,7 @@ import java.util.UUID;
 
 /**
  * Company: wetech.top
- * User: Chen
+ * User: chenzuoli
  * Date: 2018/2/3
  * Time: 14:31
  * Description: 用户实体类
